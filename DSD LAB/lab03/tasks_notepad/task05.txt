@@ -1,0 +1,29 @@
+module Difference (A, B, D);
+    input A, B;
+    output D;
+    xor x(D, A, B);
+endmodule
+
+module Borrow (A, B, Borr);
+    input A, B;
+    output Borr;
+    wire nA;
+    not n(nA, A);
+    and a(Borr, nA, B);
+endmodule
+
+module Hs (A, B, D, Borr);
+    input A, B;
+    output D, Borr;
+    Difference d1(A, B, D);
+    Borrow b1(A, B, Borr);
+endmodule
+
+module Fs (A, B, Bin, D, Borr);
+    input A, B, Bin;
+    output D, Borr;
+    wire b1, b2, d1;
+    Hs h1(A, B, d1, b1);
+    Hs h2(d1, Bin, D, b2);
+    or o(Borr, b1, b2);
+endmodule

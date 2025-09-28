@@ -1,0 +1,48 @@
+#include <msp430.h>
+
+void setup_TimerA();
+
+int main(void)
+{
+    WDTCTL = WDTPW | WDTHOLD;     // Stop watchdog timer
+    PM5CTL0 &= ~LOCKLPM5;         // Unlock GPIOs
+
+    // Configure P1.0 as output (LED)
+    P1DIR |= BIT0;
+    P1OUT &= ~BIT0;
+
+    setup_TimerA();               // Setup Timer_A for 2s overflow
+
+    // Enter LPM3.5
+    PMMCTL0_H = PMMPW_H;          // Unlock PMM
+    PMMCTL0_L |= PMMREGOFF;       // Enter LPM3.5 (device will reset after wake)
+    __bis_SR_register(LPM3_bits | GIE);
+
+    while(1); // Should never reach here
+}
+
+void setup_TimerA()
+{
+    // ACLK = 32768 Hz -> 2 sec = 65536 ticks
+    TA0CCTL0 = CCIE;              // Enable interrupt
+    TA0CCR0 = 32768 * 2 - 1;      // 2 seconds at 32.768 kHz
+    TA0CTL = TASSEL_1 | MC_1 | TACLR;  // ACLK, up mode, clear
+}
+
+// Timer A0 ISR
+#if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
+#pragma vector = TIMER0_A0_VECTOR
+__interrupt void Timer_A_ISR(void)
+#elif defined(__GNUC__)
+void __attribute__ ((interrupt(TIMER0_A0_VECTOR))) Timer_A_ISR(void)
+#else
+#error Compiler not supported!
+#endif
+{
+    P1OUT ^= BIT0;                // Toggle LED
+
+    // Re-enter LPM3.5 after toggling LED
+    setup_TimerA();               // Reconfigure timer
+    PMMCTL0_H = PMMPW_H;
+    PMMCTL0_L |= PMMREGOFF;
+}

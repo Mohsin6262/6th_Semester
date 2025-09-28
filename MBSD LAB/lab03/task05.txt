@@ -1,0 +1,28 @@
+//night rider
+#include <msp430.h> 
+
+int main(void) {
+    WDTCTL = WDTPW | WDTHOLD;  // Stop watchdog timer
+    PM5CTL0 &= ~LOCKLPM5;
+
+    P8DIR |= 0xFF;             // Set all pins of Port 8 as output
+    P1DIR &= ~0x04;            // Set P1.2 as input (Switch)
+    P1OUT |= 0x04;             // Pull-up resistor on P1.2
+    P1REN |= 0x04;             // Enable resistor on P1.2
+
+    unsigned char pattern = 0x01;
+
+    while (1) {
+        if (!(P1IN & 0x04)) {  // If switch is pressed
+            __delay_cycles(100000);  
+            P8OUT ^= pattern;  // Toggle the current LED
+            __delay_cycles(100000);
+            pattern <<= 1;
+            if (pattern == 0x00) {
+                pattern = 0x01;
+            }
+        }
+    }
+
+    return 0;
+}

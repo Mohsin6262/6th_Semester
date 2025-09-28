@@ -1,0 +1,2 @@
+xst -intstyle ise -ifn "D:/Semester Data/6th semester/DSD LAB/lab03/lab05/TopModule.xst" -ofn "D:/Semester Data/6th semester/DSD LAB/lab03/lab05/TopModule.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc BCDa.ucf -p xc6slx9-csg324-2 "TopModule.ngc" TopModule.ngd  

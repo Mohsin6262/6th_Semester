@@ -1,0 +1,21 @@
+module taskb(OUT,A,B,dp,en);
+input [3:0] A;
+input [3:0] B;
+output [6:0] OUT;
+wire [3:0] SUM;
+input en;
+output dp;
+assign SUM=A+B;
+assign dp=en;
+assign OUT=(SUM==4'b0000) ? 7'b1000000:
+           (SUM==4'b0001) ? 7'b1111001:
+           (SUM==4'b0010) ? 7'b0100100:
+           (SUM==4'b0011) ? 7'b0110000:
+           (SUM==4'b0100) ? 7'b0011001:
+           (SUM==4'b0101) ? 7'b0010010:
+           (SUM==4'b0110) ? 7'b0000010:
+           (SUM==4'b0111) ? 7'b1110010:
+           (SUM==4'b1000) ? 7'b0000000:
+           (SUM==4'b1001) ? 7'b0010000:
+		   7'b1111111;
+endmodule

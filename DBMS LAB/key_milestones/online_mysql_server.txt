@@ -1,0 +1,1 @@
+mysqlsh --sql mysql://avnadmin:AVNS_1QnB5lAUunj-IAE6NLv@mysql-50af70f-job-portal-01.c.aivencloud.com:26585/job_portal?ssl-mode=REQUIRED

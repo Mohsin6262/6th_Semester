@@ -1,0 +1,16 @@
+module RingCounter_4bit(CLK, RST, COUNT);
+
+	input CLK, RST;
+	output [3:0] COUNT;
+	
+	reg [3:0] COUNT;
+
+	always @(posedge CLK or posedge RST)
+		if (RST)
+			COUNT <= 4'b1000;
+		else 
+			begin 
+				COUNT <= COUNT<< 1;
+				COUNT [0] <= COUNT[3]; 
+			end		
+endmodule

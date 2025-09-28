@@ -1,0 +1,45 @@
+module decoder3x8(A, B, C, D);
+    input A, B, C;  // 3 input lines
+    output [7:0] D; // 8 output lines
+
+    assign D[0] = ~A & ~B & ~C;
+    assign D[1] = ~A & ~B & C;
+    assign D[2] = ~A & B & ~C;
+    assign D[3] = ~A & B & C;
+    assign D[4] = A & ~B & ~C;
+    assign D[5] = A & ~B & C;
+    assign D[6] = A & B & ~C;
+    assign D[7] = A & B & C;
+endmodule
+
+
+# ===== OUTPUT PINS (CONNECTED TO LEDs) =====
+NET "D[7]"  LOC = P15  | SLEW = FAST;  # LED8
+NET "D[6]"  LOC = P16  | SLEW = FAST;  # LED7
+NET "D[5]"  LOC = N15  | SLEW = FAST;  # LED6
+NET "D[4]"  LOC = N16  | SLEW = FAST;  # LED5
+NET "D[3]"  LOC = U17  | SLEW = FAST;  # LED4
+NET "D[2]"  LOC = U18  | SLEW = FAST;  # LED3
+NET "D[1]"  LOC = T17  | SLEW = FAST;  # LED2
+NET "D[0]"  LOC = T18  | SLEW = FAST;  # LED1
+
+# ===== INPUT PINS (CONNECTED TO DIP SWITCHES) =====
+NET "A"  LOC = F17  | PULLUP;  # DP6 Switch
+NET "B"  LOC = F18  | PULLUP;  # DP5 Switch
+NET "C"  LOC = E16  | PULLUP;  # DP4 Switch
+
+
+# ===== Output Pins (Connected to LEDs) =====
+NET "O[7]" SLEW = FAST;  # LED8 for D[7]
+NET "O[6]" SLEW = FAST;  # LED7 for D[6]
+NET "O[5]" SLEW = FAST;  # LED6 for D[5]
+NET "O[4]" SLEW = FAST;  # LED5 for D[4]
+NET "O[3]" SLEW = FAST;  # LED4 for D[3]
+NET "O[2]" SLEW = FAST;  # LED3 for D[2]
+NET "O[1]" SLEW = FAST;  # LED2 for D[1]
+NET "O[0]" SLEW = FAST;  # LED1 for D[0]
+
+# ===== Input Pins (Connected to DIP Switches) =====
+NET "I[6]" PULLUP;  # A input (Connected to DP6 switch)
+NET "I[5]" PULLUP;  # B input (Connected to DP5 switch)
+NET "I[4]" PULLUP;  # C input (Connected to DP4 switch)

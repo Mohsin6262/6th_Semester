@@ -1,0 +1,7 @@
+xst -intstyle ise -ifn "D:/Semester Data/6th semester/DSD LAB/lab11_task02_multiplier/multiplier_tb.xst" -ofn "D:/Semester Data/6th semester/DSD LAB/lab11_task02_multiplier/multiplier_tb.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx9-csg324-2 "multiplier_tb.ngc" multiplier_tb.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx9-csg324-2 "multiplier_tb.ngc" multiplier_tb.ngd  
+xst -intstyle ise -ifn "D:/Semester Data/6th semester/DSD LAB/lab11_task02_multiplier/multiplier_tb.xst" -ofn "D:/Semester Data/6th semester/DSD LAB/lab11_task02_multiplier/multiplier_tb.syr" 
+xst -intstyle ise -ifn "D:/Semester Data/6th semester/DSD LAB/lab11_task02_multiplier/multiplier_tb.xst" -ofn "D:/Semester Data/6th semester/DSD LAB/lab11_task02_multiplier/multiplier_tb.syr" 
+xst -intstyle ise -ifn "D:/Semester Data/6th semester/DSD LAB/lab11_task02_multiplier/multiplier_tb.xst" -ofn "D:/Semester Data/6th semester/DSD LAB/lab11_task02_multiplier/multiplier_tb.syr" 
+xst -intstyle ise -ifn "D:/Semester Data/6th semester/DSD LAB/lab11_task02_multiplier/multiplier_tb.xst" -ofn "D:/Semester Data/6th semester/DSD LAB/lab11_task02_multiplier/multiplier_tb.syr" 

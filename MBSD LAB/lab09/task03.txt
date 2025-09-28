@@ -1,0 +1,65 @@
+#include <msp430.h>
+
+unsigned char state = 0;
+
+void setPWM(unsigned int freq, float duty)
+{
+    if (freq == 100)
+    {
+        TA0CCR0 = 10000 - 1;             // 100Hz
+        TA0CCR1 = (unsigned int)(10000 * duty);  // 40% duty
+    }
+    else if (freq == 300)
+    {
+        TA0CCR0 = 3333 - 1;              // 300Hz
+        TA0CCR1 = (unsigned int)(3333 * duty);   // 60% duty
+    }
+}
+
+int main(void)
+{
+    WDTCTL = WDTPW | WDTHOLD;           // Stop watchdog
+    PM5CTL0 &= ~LOCKLPM5;               // Enable GPIO
+
+    // Configure P1.2 as TA0.1 output
+    P1DIR |= BIT2;
+    P1SEL0 |= BIT2;
+
+    // Configure P2.3 as input with pull-up resistor
+    P2DIR &= ~BIT3;
+    P2REN |= BIT3;
+    P2OUT |= BIT3;
+
+    // Enable interrupt on P2.3 (falling edge)
+    P2IES |= BIT3;
+    P2IFG &= ~BIT3;
+    P2IE |= BIT3;
+
+    // Timer A0 setup
+    TA0CCTL1 = OUTMOD_7;                // Reset/set mode
+    TA0CTL = TASSEL__SMCLK | MC__UP | TACLR;
+
+    // Start with 100Hz, 40%
+    setPWM(100, 0.4);
+
+    __bis_SR_register(GIE);            // Global interrupt enable
+
+    while(1)
+    {
+        __no_operation();              // For debugger
+    }
+}
+
+// Port 2 interrupt service routine
+#pragma vector=PORT2_VECTOR
+__interrupt void Port_2(void)
+{
+    state ^= 1; // Toggle state
+
+    if (state)
+        setPWM(300, 0.6);  // 300Hz, 60%
+    else
+        setPWM(100, 0.4);  // 100Hz, 40%
+
+    P2IFG &= ~BIT3; // Clear flag
+}

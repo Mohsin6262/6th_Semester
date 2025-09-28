@@ -1,0 +1,17 @@
+module RingCounter (CLK, RST, COUNT);
+
+	input CLK, RST;
+	output [7:0] COUNT;
+	
+	reg [7:0] COUNT;
+
+	always @(posedge CLK)
+		if (RST)
+			COUNT <= 8'b10000000;
+		else 
+			begin 
+				COUNT <= COUNT<< 1;
+				COUNT [0] <= COUNT [7]; 
+			end
+			
+endmodule

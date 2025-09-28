@@ -1,0 +1,22 @@
+module decoder2X4(A, B, D);
+    input A, B;
+    output [3:0] D;
+
+    assign D[0] = ~A & ~B;
+    assign D[1] = ~A & B;
+    assign D[2] = A & ~B;
+    assign D[3] = A & B;
+endmodule
+
+
+#Output Pins (Connected to LEDs)
+NET "D[3]" SLEW = FAST;  # LED4 for D[3]
+NET "D[2]" SLEW = FAST;  # LED3 for D[2]
+NET "D[1]" SLEW = FAST;  # LED2 for D[1]
+NET "D[0]" SLEW = FAST;  # LED1 for D[0]
+
+# Input Pins (Connected to DIP Switches)
+NET "A" PULLUP;
+NET "B" PULLUP;
+
+

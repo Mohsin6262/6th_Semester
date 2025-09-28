@@ -1,0 +1,2 @@
+xst -intstyle ise -ifn "D:/Semester Data/6th semester/DSD LAB/lab03/ring_counter/BCDa.xst" -ofn "D:/Semester Data/6th semester/DSD LAB/lab03/ring_counter/BCDa.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc top.ucf -p xc6slx9-csg324-2 "BCDa.ngc" BCDa.ngd  

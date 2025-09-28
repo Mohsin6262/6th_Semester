@@ -1,0 +1,78 @@
+// Clock Divider Module
+module Clock_Divider(
+    input clock_in,
+    output reg clock_out = 0
+);
+    reg [27:0] counter = 28'd0;
+    parameter DIVISOR = 28'd50000000; // Adjust according to your FPGA clock
+
+    always @(posedge clock_in) begin
+        if (counter == (DIVISOR - 1)) begin
+            counter <= 28'd0;
+            clock_out <= ~clock_out;
+        end else begin
+            counter <= counter + 1;
+        end
+    end
+endmodule
+
+// 4-bit Ring Counter
+module RingCounter(
+    input CLK,
+    input RST,
+    output reg [3:0] COUNT
+);
+    always @(posedge CLK or posedge RST) begin
+        if (RST)
+            COUNT <= 4'b0001;
+        else begin
+            COUNT <= COUNT << 1;
+            COUNT[0] <= COUNT[3]; // Rotate left
+        end
+    end
+endmodule
+
+// BCD to 7-segment display logic
+module BCD(
+    input [3:0] COUNT,
+    output reg [10:0] OUT
+);
+    always @(*) begin
+        case (COUNT)
+            4'b0001: OUT = 11'b11110011011; // Display 1
+            4'b0010: OUT = 11'b01001001011; // Display 2
+            4'b0100: OUT = 11'b00110011011; // Display 4
+            4'b1000: OUT = 11'b00000001011; // Display 8
+            default: OUT = 11'b11111111111; // Blank/error
+        endcase
+    end
+endmodule
+
+// Top Module
+module Top(
+    input CLK,     // FPGA system clock
+    input RST,     // Reset
+    output [10:0] OUT // Output to 7-segment display
+);
+    wire slow_clk;
+    wire [3:0] COUNT;
+
+    // Instantiate clock divider
+    Clock_Divider #(28'd50000000) divider (
+        .clock_in(CLK),
+        .clock_out(slow_clk)
+    );
+
+    // Instantiate ring counter
+    RingCounter rc (
+        .CLK(slow_clk),
+        .RST(RST),
+        .COUNT(COUNT)
+    );
+
+    // Instantiate 7-segment decoder
+    BCD bcd (
+        .COUNT(COUNT),
+        .OUT(OUT)
+    );
+endmodule

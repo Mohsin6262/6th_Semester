@@ -1,0 +1,21 @@
+xst -intstyle ise -ifn "D:/Semester Data/6th semester/DSD LAB/lab03/lab03/decoder2X1.xst" -ofn "D:/Semester Data/6th semester/DSD LAB/lab03/lab03/decoder2X1.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc buffer.ucf -p xc6slx9-csg324-2 "decoder2X1.ngc" decoder2X1.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc buffer.ucf -p xc6slx9-csg324-2 "decoder2X1.ngc" decoder2X1.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc buffer.ucf -p xc6slx9-csg324-2 "decoder2X1.ngc" decoder2X1.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc buffer.ucf -p xc6slx9-csg324-2 "decoder2X1.ngc" decoder2X1.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc buffer.ucf -p xc6slx9-csg324-2 "decoder2X1.ngc" decoder2X1.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc buffer.ucf -p xc6slx9-csg324-2 "decoder2X1.ngc" decoder2X1.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc buffer.ucf -p xc6slx9-csg324-2 "decoder2X1.ngc" decoder2X1.ngd  
+map -intstyle ise -p xc6slx9-csg324-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o decoder2X1_map.ncd decoder2X1.ngd decoder2X1.pcf 
+par -w -intstyle ise -ol high -mt off decoder2X1_map.ncd decoder2X1.ncd decoder2X1.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml decoder2X1.twx decoder2X1.ncd -o decoder2X1.twr decoder2X1.pcf -ucf buffer.ucf 
+bitgen -intstyle ise -f decoder2X1.ut decoder2X1.ncd 
+xst -intstyle ise -ifn "D:/Semester Data/6th semester/DSD LAB/lab03/lab03/decoder2X1.xst" -ofn "D:/Semester Data/6th semester/DSD LAB/lab03/lab03/decoder2X1.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx9-csg324-2 "decoder2X1.ngc" decoder2X1.ngd  
+map -intstyle ise -p xc6slx9-csg324-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o decoder2X1_map.ncd decoder2X1.ngd decoder2X1.pcf 
+par -w -intstyle ise -ol high -mt off decoder2X1_map.ncd decoder2X1.ncd decoder2X1.pcf 
+xst -intstyle ise -ifn "D:/Semester Data/6th semester/DSD LAB/lab03/lab03/decoder2X1.xst" -ofn "D:/Semester Data/6th semester/DSD LAB/lab03/lab03/decoder2X1.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx9-csg324-2 "decoder2X1.ngc" decoder2X1.ngd  
+map -intstyle ise -p xc6slx9-csg324-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o decoder2X1_map.ncd decoder2X1.ngd decoder2X1.pcf 
+par -w -intstyle ise -ol high -mt off decoder2X1_map.ncd decoder2X1.ncd decoder2X1.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml decoder2X1.twx decoder2X1.ncd -o decoder2X1.twr decoder2X1.pcf 

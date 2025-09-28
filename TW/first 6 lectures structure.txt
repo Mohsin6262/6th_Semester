@@ -1,0 +1,158 @@
+**CV / Resume Structure**
+
+1. **Contact Information**  
+   - Full Name  
+   - Phone Number  
+   - Email Address  
+   - LinkedIn Profile (optional)  
+   - Address (optional)
+
+2. **Career Objective**  
+   - A brief 2–3 line summary of your career goals, what you're looking for, and what you can contribute.
+
+3. **Education**  
+   - Degree Name | Institution | Year of Graduation  
+   - GPA (if strong)  
+   - Relevant coursework or projects
+
+4. **Work Experience**  
+   - Job Title | Company | Duration  
+   - Key Responsibilities  
+   - Achievements in the role (use action verbs)
+
+5. **Achievements**  
+   - Awards, scholarships, certifications, competitions, etc.
+
+6. **Skills**  
+   - Technical: Programming, tools, software  
+   - Soft Skills: Communication, teamwork, leadership
+
+7. **References**  
+   - Available upon request  
+   *(Or list names and contact details of referees with their permission)*
+
+---
+
+**Letter of Motivation (LoM)**
+
+1. **Opening**  
+   - State the position, organization, and how you came to know about it.  
+   - Example: *I am writing to express my interest in the Master’s program in Computer Science at XYZ University.*
+
+2. **Body**  
+   - Share academic and professional background.  
+   - Tell a story: your journey, interests, and achievements that make you a strong candidate.  
+   - Mention key motivations for applying (specific courses, faculty, research opportunities).
+
+3. **Conclusion**  
+   - Summarize your suitability.  
+   - Express enthusiasm and readiness.  
+   - Example: *I am confident that this program aligns perfectly with my goals, and I am eager to contribute to your academic community.*
+
+---
+
+**Cover Letter**
+
+1. **Sender’s Details (Top-left):**  
+   - Name, address, phone, email, date
+
+2. **Receiver’s Details:**  
+   - Hiring Manager’s Name, Company Name, Address
+
+3. **Salutation:**  
+   - Dear [Hiring Manager’s Name] or *Dear Hiring Manager*
+
+4. **Paragraph 1 – Introduction**  
+   - Who you are, the role you’re applying for, and how you heard about it.
+
+5. **Paragraph 2 – Match Your Skills**  
+   - Match your experience with job requirements. Mention relevant skills and examples.
+
+6. **Paragraph 3 – Your Value as an Employee**  
+   - Highlight what you bring to the company – personality, work ethic, contributions.
+
+7. **Paragraph 4 – Thank You and Availability**  
+   - Express gratitude, offer to share more in an interview, and mention availability.
+
+---
+
+**Letter of Recommendation (LoR)**
+
+1. **Salutation**  
+   - *To whom it may concern*
+
+2. **Paragraph 1 – Relationship and Qualification**  
+   - Who you are, your relationship to the candidate, and how long you’ve known them.
+
+3. **Paragraph 2 – Candidate's Contributions**  
+   - Highlight their achievements, strengths, and unique contributions.
+
+4. **Paragraph 3 – Match to Role**  
+   - Explain how the candidate’s skills fit the job or program.
+
+5. **Summary**  
+   - Reaffirm your support for the candidate.
+
+6. **Conclusion**  
+   - Offer to provide further details if required.  
+   - *Sincerely, [Your Name, Title, Contact Info]*
+
+---
+
+**Professional Email Format**
+
+1. **Addressing**  
+   - To: Main recipient  
+   - CC: Others who need to be informed  
+   - BCC: For confidentiality
+
+2. **Subject Line**  
+   - Be specific and brief: *"Request for Internship Certificate – John Doe"*
+
+3. **Message Body**  
+   - Opening greeting  
+   - Purpose of email  
+   - Details or request  
+   - Closing line  
+
+4. **Attachments**  
+   - Add documents or files as needed
+
+5. **Signature**  
+   - Name, Designation, Contact Info, Optional Logo
+
+---
+
+**Letter of Correspondence**
+
+**[Company Letterhead / Logo]**  
+**Date:** [DD/MM/YYYY]
+
+**To:**  
+[Recipient's Name]  
+[Designation]  
+[Department/Organization Name]
+
+**From:**  
+[Your Name]  
+[Your Designation]  
+[Your Department/Organization Name]
+
+**Subject:** [Brief and Specific Title]
+
+---
+
+Dear [Recipient’s Name],  
+
+[Clearly state the purpose of the letter. Use polite, professional language.]
+
+[Explain the issue, request, or update. Be concise but informative.]
+
+[If applicable, provide next steps, deadlines, or request further action.]
+
+Thank you for your attention to this matter.  
+
+Sincerely,  
+**[Your Full Name]**  
+[Your Designation]  
+[Your Contact Information]

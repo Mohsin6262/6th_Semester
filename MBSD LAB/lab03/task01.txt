@@ -1,0 +1,21 @@
+//write a program which monitor a switch if it is pressed then toggle LED attach with P1.0
+#include <msp430.h> 
+
+int main(void) {
+    WDTCTL = WDTPW | WDTHOLD;   // Stop watchdog timer
+    PM5CTL0 &= ~LOCKLPM5;       // Enable GPIOs
+
+    P1DIR |= 0x01;              // Set P1.0 as output (LED)
+    P1DIR &= ~0x04;             // Set P1.2 as input (Switch)
+    P1OUT |= 0x04;              // Pull-up resistor on P1.2
+    P1REN |= 0x04;              // Enable resistor on P1.2
+
+    while(1) {
+        if (!(P1IN & 0x04)) {   // If switch is pressed mean condition P1.2 goes low and condtion will true
+            P1OUT ^= 0x01;      // Toggle LED on P1.0
+            __delay_cycles(100000); 
+
+        }
+    }
+}
+

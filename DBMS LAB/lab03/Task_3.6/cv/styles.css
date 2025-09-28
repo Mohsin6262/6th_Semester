@@ -1,0 +1,97 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Container */
+.container {
+    display: flex;
+    max-width: 1000px;
+    margin: 20px auto;
+    background: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 35%;
+    background: #23238e;
+    color: white;
+    padding: 20px;
+}
+
+.sidebar h2 {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.sidebar .title {
+    font-style: italic;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.sidebar h3 {
+    margin-top: 20px;
+    font-size: 18px;
+    border-bottom: 2px solid white;
+    padding-bottom: 5px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 10px 0;
+}
+
+/* Main Content */
+.content {
+    width: 65%;
+    padding: 20px;
+}
+
+.content h3 {
+    font-size: 20px;
+    border-bottom: 2px solid #23238e;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style-type: square;
+    padding-left: 20px;
+}
+
+ul li {
+    margin: 10px 0;
+}
+
+/* List Styles */
+.contact-list li::before {
+    content: "✔ ";
+    color: #ffd700;
+}
+
+.skills-list li::before {
+    content: "🔹 ";
+    color: #23238e;
+}
+
+.work-list li::before {
+    content: "🚀 ";
+    color: #ff4500;
+}
+
+.certificates-list li::before {
+    content: "🏆 ";
+    color: #008000;
+}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="error" file="HDLCompiler" num="1440" delta="old" >"D:\Semester Data\6th semester\DSD LAB\lab11_task02_multiplier\tb.v" Line 21: Non-constant loop condition not supported for <arg fmt="%s" index="1">forever</arg>
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="872" delta="old" >"D:\Semester Data\6th semester\DSD LAB\lab11_task02_multiplier\tb.v" Line 19: Using initial value of <arg fmt="%s" index="1">clk</arg> since it is never assigned
+</msg>
+
+<msg type="warning" file="HDLCompiler" num="1499" delta="old" >"D:\Semester Data\6th semester\DSD LAB\lab11_task02_multiplier\tb.v" Line 3: Empty module &lt;<arg fmt="%s" index="1">tb_mult_top</arg>&gt; remains a black box.
+</msg>
+
+</messages>
+

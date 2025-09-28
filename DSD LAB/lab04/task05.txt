@@ -1,0 +1,6 @@
+module not_using_mux(A, Y);
+    input A;     // Input
+    output Y;    // Output
+
+    assign Y = A ? 1'b0 : 1'b1;  // MUX functionality: Y = (A) ? 0 : 1
+endmodule

@@ -1,0 +1,14 @@
+# ===== OUTPUT PINS (CONNECTED TO LEDs) =====
+NET "D[7]"  LOC = P15  | SLEW = FAST;  # LED8
+NET "D[6]"  LOC = P16  | SLEW = FAST;  # LED7
+NET "D[5]"  LOC = N15  | SLEW = FAST;  # LED6
+NET "D[4]"  LOC = N16  | SLEW = FAST;  # LED5
+NET "D[3]"  LOC = U17  | SLEW = FAST;  # LED4
+NET "D[2]"  LOC = U18  | SLEW = FAST;  # LED3
+NET "D[1]"  LOC = T17  | SLEW = FAST;  # LED2
+NET "D[0]"  LOC = T18  | SLEW = FAST;  # LED1
+
+# ===== INPUT PINS (CONNECTED TO DIP SWITCHES) =====
+NET "A"  LOC = F17  | PULLUP;  # DP6 Switch
+NET "B"  LOC = F18  | PULLUP;  # DP5 Switch
+NET "C"  LOC = E16  | PULLUP;  # DP4 Switch

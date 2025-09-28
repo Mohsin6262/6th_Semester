@@ -1,0 +1,11 @@
+xst -intstyle ise -ifn "D:/Semester Data/6th semester/DSD LAB/lab03/lab05/RingCounter_4bit.xst" -ofn "D:/Semester Data/6th semester/DSD LAB/lab03/lab05/RingCounter_4bit.syr" 
+xst -intstyle ise -ifn "D:/Semester Data/6th semester/DSD LAB/lab03/lab05/RingCounter_4bit.xst" -ofn "D:/Semester Data/6th semester/DSD LAB/lab03/lab05/RingCounter_4bit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc BCDa.ucf -p xc6slx9-csg324-2 "RingCounter_4bit.ngc" RingCounter_4bit.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc BCDa.ucf -p xc6slx9-csg324-2 "RingCounter_4bit.ngc" RingCounter_4bit.ngd  
+map -intstyle ise -p xc6slx9-csg324-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o RingCounter_4bit_map.ncd RingCounter_4bit.ngd RingCounter_4bit.pcf 
+xst -intstyle ise -ifn "D:/Semester Data/6th semester/DSD LAB/lab03/lab05/RingCounter_4bit.xst" -ofn "D:/Semester Data/6th semester/DSD LAB/lab03/lab05/RingCounter_4bit.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc BCDa.ucf -p xc6slx9-csg324-2 "RingCounter_4bit.ngc" RingCounter_4bit.ngd  
+map -intstyle ise -p xc6slx9-csg324-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o RingCounter_4bit_map.ncd RingCounter_4bit.ngd RingCounter_4bit.pcf 
+par -w -intstyle ise -ol high -mt off RingCounter_4bit_map.ncd RingCounter_4bit.ncd RingCounter_4bit.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml RingCounter_4bit.twx RingCounter_4bit.ncd -o RingCounter_4bit.twr RingCounter_4bit.pcf -ucf BCDa.ucf 
+bitgen -intstyle ise -f RingCounter_4bit.ut RingCounter_4bit.ncd 

@@ -1,0 +1,1 @@
+xst -intstyle ise -ifn "D:/Semester Data/6th semester/DSD LAB/lab03/BCD/bcda.xst" -ofn "D:/Semester Data/6th semester/DSD LAB/lab03/BCD/bcda.syr" 

@@ -1,0 +1,16 @@
+xst -intstyle ise -ifn "D:/Semester Data/6th semester/DSD LAB/lab11/tb_factorial_top.xst" -ofn "D:/Semester Data/6th semester/DSD LAB/lab11/tb_factorial_top.syr" 
+xst -intstyle ise -ifn "D:/Semester Data/6th semester/DSD LAB/lab11/tb_factorial_top.xst" -ofn "D:/Semester Data/6th semester/DSD LAB/lab11/tb_factorial_top.syr" 
+xst -intstyle ise -ifn "D:/Semester Data/6th semester/DSD LAB/lab11/tb_factorial_top.xst" -ofn "D:/Semester Data/6th semester/DSD LAB/lab11/tb_factorial_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc factorial_top.ucf -p xc6slx9-csg324-2 "tb_factorial_top.ngc" tb_factorial_top.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx9-csg324-2 "tb_factorial_top.ngc" tb_factorial_top.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx9-csg324-2 "tb_factorial_top.ngc" tb_factorial_top.ngd  
+xst -intstyle ise -ifn "D:/Semester Data/6th semester/DSD LAB/lab11/tb_factorial_top.xst" -ofn "D:/Semester Data/6th semester/DSD LAB/lab11/tb_factorial_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx9-csg324-2 "tb_factorial_top.ngc" tb_factorial_top.ngd  
+xst -intstyle ise -ifn "D:/Semester Data/6th semester/DSD LAB/lab11/tb_factorial_top.xst" -ofn "D:/Semester Data/6th semester/DSD LAB/lab11/tb_factorial_top.syr" 
+xst -intstyle ise -ifn "D:/Semester Data/6th semester/DSD LAB/lab11/tb_factorial_top.xst" -ofn "D:/Semester Data/6th semester/DSD LAB/lab11/tb_factorial_top.syr" 
+xst -intstyle ise -ifn "D:/Semester Data/6th semester/DSD LAB/lab11/tb_factorial_top.xst" -ofn "D:/Semester Data/6th semester/DSD LAB/lab11/tb_factorial_top.syr" 
+xst -intstyle ise -ifn "D:/Semester Data/6th semester/DSD LAB/lab11/tb_factorial_top.xst" -ofn "D:/Semester Data/6th semester/DSD LAB/lab11/tb_factorial_top.syr" 
+xst -intstyle ise -ifn "D:/Semester Data/6th semester/DSD LAB/lab11/tb_factorial_top.xst" -ofn "D:/Semester Data/6th semester/DSD LAB/lab11/tb_factorial_top.syr" 
+xst -intstyle ise -ifn "D:/Semester Data/6th semester/DSD LAB/lab11/tb_factorial_top.xst" -ofn "D:/Semester Data/6th semester/DSD LAB/lab11/tb_factorial_top.syr" 
+xst -intstyle ise -ifn "D:/Semester Data/6th semester/DSD LAB/lab11/tb_factorial_top.xst" -ofn "D:/Semester Data/6th semester/DSD LAB/lab11/tb_factorial_top.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx9-csg324-2 "tb_factorial_top.ngc" tb_factorial_top.ngd  

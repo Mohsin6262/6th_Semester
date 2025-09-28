@@ -1,0 +1,438 @@
+<!doctype html>
+<html lang="en" data-bs-theme="auto">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Urban Garden Haven · Home</title>
+
+  <!-- Bootstrap CSS (CDN) -->
+  <link 
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+
+  <style>
+    /* Basic page styling */
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+      color: #212529;
+      font-weight: 400;
+    }
+    .cover-header {
+      margin-top: 5rem; /* Space for fixed navbar */
+    }
+    .hero {
+      background: url('https://source.unsplash.com/1600x900/?garden,plants') center/cover no-repeat;
+      min-height: 80vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .hero-content {
+      background-color: rgba(255, 255, 255, 0.8);
+      padding: 2rem;
+      border-radius: 0.5rem;
+      max-width: 700px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .cover-title {
+      font-size: 2rem; 
+      font-weight: 600;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-success fixed-top">
+    <div class="container-fluid">
+      <a class="navbar-brand fw-bold" href="cover.html">Urban Garden Haven</a>
+      <button 
+        class="navbar-toggler" 
+        type="button" 
+        data-bs-toggle="collapse" 
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav" 
+        aria-expanded="false" 
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="cover.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="blog.html">Blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="checkout.html">Checkout</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="sign-in.html">Sign In</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO / COVER SECTION -->
+  <div class="cover-header hero">
+    <div class="hero-content">
+      <h2 class="cover-title">Urban Garden Haven</h2>
+      <p class="lead mb-4">
+        Bring nature to your doorstep with our eco-friendly gardening products,
+        tips, and community blog. Whether you’re a beginner or a seasoned pro,
+        we’ve got everything you need to nurture your green thumb.
+      </p>
+      <a href="blog.html" class="btn btn-success">Explore Our Blog</a>
+    </div>
+  </div>
+
+  <!-- IMAGE GALLERY SECTION -->
+  <div class="container my-5">
+    <h3 class="mb-4 text-center">Our Garden Gallery</h3>
+    <div class="row row-cols-1 row-cols-md-3 g-3">
+
+      <!-- Image 1 -->
+      <div class="col">
+        <a href="#" data-bs-toggle="modal" data-bs-target="#modal1">
+          <img src="images/1.jpg" alt="Tulip" class="img-fluid rounded shadow">
+        </a>
+        <p class="text-center fw-semibold mt-2 mb-0">Tulip - $5</p>
+      </div>
+
+      <!-- Image 2 -->
+      <div class="col">
+        <a href="#" data-bs-toggle="modal" data-bs-target="#modal2">
+          <img src="images/2.jpg" alt="Rose" class="img-fluid rounded shadow">
+        </a>
+        <p class="text-center fw-semibold mt-2 mb-0">Rose - $7</p>
+      </div>
+
+      <!-- Image 3 -->
+      <div class="col">
+        <a href="#" data-bs-toggle="modal" data-bs-target="#modal3">
+          <img src="images/3.jpg" alt="Sunflower" class="img-fluid rounded shadow">
+        </a>
+        <p class="text-center fw-semibold mt-2 mb-0">Sunflower - $6</p>
+      </div>
+
+      <!-- Image 4 -->
+      <div class="col">
+        <a href="#" data-bs-toggle="modal" data-bs-target="#modal4">
+          <img src="images/4.jpg" alt="Lily" class="img-fluid rounded shadow">
+        </a>
+        <p class="text-center fw-semibold mt-2 mb-0">Lily - $8</p>
+      </div>
+
+      <!-- Image 5 -->
+      <div class="col">
+        <a href="#" data-bs-toggle="modal" data-bs-target="#modal5">
+          <img src="images/5.jpg" alt="Daisy" class="img-fluid rounded shadow">
+        </a>
+        <p class="text-center fw-semibold mt-2 mb-0">Daisy - $4</p>
+      </div>
+
+      <!-- Image 6 -->
+      <div class="col">
+        <a href="#" data-bs-toggle="modal" data-bs-target="#modal6">
+          <img src="images/6.jpg" alt="Orchid" class="img-fluid rounded shadow">
+        </a>
+        <p class="text-center fw-semibold mt-2 mb-0">Orchid - $12</p>
+      </div>
+
+      <!-- Image 7 -->
+      <div class="col">
+        <a href="#" data-bs-toggle="modal" data-bs-target="#modal7">
+          <img src="images/7.jpg" alt="Jasmine" class="img-fluid rounded shadow">
+        </a>
+        <p class="text-center fw-semibold mt-2 mb-0">Jasmine - $9</p>
+      </div>
+
+      <!-- Image 8 -->
+      <div class="col">
+        <a href="#" data-bs-toggle="modal" data-bs-target="#modal8">
+          <img src="images/8.jpg" alt="Marigold" class="img-fluid rounded shadow">
+        </a>
+        <p class="text-center fw-semibold mt-2 mb-0">Marigold - $3</p>
+      </div>
+
+      <!-- Image 9 -->
+      <div class="col">
+        <a href="#" data-bs-toggle="modal" data-bs-target="#modal9">
+          <img src="images/9.jpg" alt="Daffodil" class="img-fluid rounded shadow">
+        </a>
+        <p class="text-center fw-semibold mt-2 mb-0">Daffodil - $5</p>
+      </div>
+
+      <!-- Image 10 -->
+      <div class="col">
+        <a href="#" data-bs-toggle="modal" data-bs-target="#modal10">
+          <img src="images/10.jpg" alt="Carnation" class="img-fluid rounded shadow">
+        </a>
+        <p class="text-center fw-semibold mt-2 mb-0">Carnation - $6</p>
+      </div>
+
+      <!-- Image 11 -->
+      <div class="col">
+        <a href="#" data-bs-toggle="modal" data-bs-target="#modal11">
+          <img src="images/11.jpg" alt="Hibiscus" class="img-fluid rounded shadow">
+        </a>
+        <p class="text-center fw-semibold mt-2 mb-0">Hibiscus - $10</p>
+      </div>
+
+      <!-- Image 12 -->
+      <div class="col">
+        <a href="#" data-bs-toggle="modal" data-bs-target="#modal12">
+          <img src="images/12.jpg" alt="Chrysanthemum" class="img-fluid rounded shadow">
+        </a>
+        <p class="text-center fw-semibold mt-2 mb-0">Chrysanthemum - $11</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODALS -->
+  <!-- Modal 1 (Tulip) -->
+  <div class="modal fade" id="modal1" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Tulip - $5</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="images/1.jpg" alt="Tulip" class="img-fluid rounded mb-3">
+          <p>
+            Tulips are classic spring bulbs, known for their bright, cup-shaped blooms. 
+            They thrive in well-drained soil with plenty of sunlight. Plant them in the fall 
+            for a cheerful display when spring arrives!
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2 (Rose) -->
+  <div class="modal fade" id="modal2" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Rose - $7</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="images/2.jpg" alt="Rose" class="img-fluid rounded mb-3">
+          <p>
+            Roses symbolize love and beauty. Modern rose varieties are surprisingly hardy, 
+            and with proper pruning, feeding, and sunlight, they can bloom throughout the season.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 3 (Sunflower) -->
+  <div class="modal fade" id="modal3" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Sunflower - $6</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="images/3.jpg" alt="Sunflower" class="img-fluid rounded mb-3">
+          <p>
+            Sunflowers bring bright, cheerful energy to any garden. 
+            They love full sun and can grow quite tall, making them a striking addition to flower beds.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 4 (Lily) -->
+  <div class="modal fade" id="modal4" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Lily - $8</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="images/4.jpg" alt="Lily" class="img-fluid rounded mb-3">
+          <p>
+            Lilies are prized for their elegant blooms and sweet fragrance. 
+            They come in many varieties, each adding a touch of sophistication to any garden or bouquet.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 5 (Daisy) -->
+  <div class="modal fade" id="modal5" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Daisy - $4</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="images/5.jpg" alt="Daisy" class="img-fluid rounded mb-3">
+          <p>
+            Daisies are simple, charming flowers that brighten any space. 
+            They’re easy to grow and prefer sunny spots with well-draining soil.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 6 (Orchid) -->
+  <div class="modal fade" id="modal6" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Orchid - $12</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="images/6.jpg" alt="Orchid" class="img-fluid rounded mb-3">
+          <p>
+            Orchids add an exotic touch to indoor gardens. They thrive in warm, humid conditions 
+            with indirect light, rewarding you with long-lasting, stunning blooms.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 7 (Jasmine) -->
+  <div class="modal fade" id="modal7" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Jasmine - $9</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="images/7.jpg" alt="Jasmine" class="img-fluid rounded mb-3">
+          <p>
+            Jasmine is cherished for its sweet fragrance. This climbing plant 
+            can be grown in pots or outdoors, filling the air with a delightful scent.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 8 (Marigold) -->
+  <div class="modal fade" id="modal8" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Marigold - $3</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="images/8.jpg" alt="Marigold" class="img-fluid rounded mb-3">
+          <p>
+            Marigolds are bright, hardy annuals that help repel garden pests. 
+            Their warm orange and yellow hues make them a favorite for edging flower beds.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 9 (Daffodil) -->
+  <div class="modal fade" id="modal9" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Daffodil - $5</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="images/9.jpg" alt="Daffodil" class="img-fluid rounded mb-3">
+          <p>
+            Daffodils are a sure sign of spring. These bulbs produce trumpet-like flowers 
+            that come back year after year with minimal care.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 10 (Carnation) -->
+  <div class="modal fade" id="modal10" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Carnation - $6</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="images/10.jpg" alt="Carnation" class="img-fluid rounded mb-3">
+          <p>
+            Carnations are known for their ruffled petals and subtle clove-like scent. 
+            They’re popular in bouquets and come in a wide range of colors.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 11 (Hibiscus) -->
+  <div class="modal fade" id="modal11" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Hibiscus - $10</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="images/11.jpg" alt="Hibiscus" class="img-fluid rounded mb-3">
+          <p>
+            Hibiscus plants produce large, tropical-looking blooms. They prefer 
+            warm temperatures and plenty of sunlight, rewarding you with spectacular flowers.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 12 (Chrysanthemum) -->
+  <div class="modal fade" id="modal12" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Chrysanthemum - $11</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <img src="images/12.jpg" alt="Chrysanthemum" class="img-fluid rounded mb-3">
+          <p>
+            Chrysanthemums (or “mums”) bloom in vibrant shades of red, orange, yellow, and more. 
+            They’re a staple of autumn gardens, bringing color late into the season.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="my-5 pt-5 text-center text-muted">
+    <p>&copy; 2025 Urban Garden Haven</p>
+  </footer>
+
+  <!-- Bootstrap JS (CDN) -->
+  <script 
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+  ></script>
+</body>
+</html>

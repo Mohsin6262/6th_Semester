@@ -1,0 +1,28 @@
+#include <msp430.h>
+
+int main(void)
+{
+    WDTCTL = WDTPW | WDTHOLD;
+    PM5CTL0 &= ~LOCKLPM5;
+
+    P1DIR |= 0x01;
+    // Setup Timer_A
+    TA0CCTL0 = CCIE;
+    TA0CCR0 = 16384 - 1;
+    TA0CTL = TASSEL_1 | MC_1 | TACLR;
+    __bis_SR_register(LPM3_bits | GIE);
+    __no_operation();
+}
+
+// Timer A0 interrupt service routine
+#if defined(__TI_COMPILER_VERSION__) || defined(__IAR_SYSTEMS_ICC__)
+#pragma vector = TIMER0_A0_VECTOR
+__interrupt void Timer_A_ISR(void)
+#elif defined(__GNUC__)
+void __attribute__ ((interrupt(TIMER0_A0_VECTOR))) Timer_A_ISR (void)
+#else
+#error Compiler not supported!
+#endif
+{
+    P1OUT ^= 0x01; // Toggle P1.1
+}

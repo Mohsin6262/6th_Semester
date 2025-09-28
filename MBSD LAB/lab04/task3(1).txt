@@ -1,0 +1,82 @@
+//common anode
+#include <msp430.h>
+void delay();
+
+int main(void){
+   WDTCTL= WDTPW | WDTHOLD;
+    PM5CTL0 &= ~LOCKLPM5;
+
+    P1DIR |= 0xFF;
+    P1OUT &= ~0xFF;
+
+ while(1){
+     P1OUT = 0b10000100; // Display 0
+     delay();
+     delay();
+     delay();
+     P1OUT = 0b11110101; // Display 1
+     delay();
+     delay();
+     delay();
+     P1OUT = 0b01001100; // Display 2
+     delay();
+     delay();
+     delay();
+     P1OUT = 0b01100100; // Display 3
+     delay();
+     delay();
+     delay();
+     P1OUT = 0b00110101; // Display 4
+     delay();
+     delay();
+     delay();
+     P1OUT = 0b00100110; // Display 5
+     delay();
+     delay();
+     delay();
+     P1OUT = 0b00000110; // Display 6
+     delay();
+     delay();
+     delay();
+     P1OUT = 0b11110100; // Display 7
+     delay();
+     delay();
+     delay();
+     P1OUT = 0b00000100; // Display 8
+     delay();
+     delay();
+     delay();
+     P1OUT = 0b00100100; // Display 9
+     delay();
+     delay();
+     delay();
+     P1OUT = 0b00010100; // Display A
+     delay();
+     delay();
+     delay();
+     P1OUT = 0b00000100; // Display B
+     delay();
+     delay();
+     delay();
+     P1OUT = 0b00011110; // Display C
+     delay();
+     delay();
+     delay();
+     P1OUT = 0b10000100; // Display D
+     delay();
+     delay();
+     delay();
+     P1OUT = 0b00001110; // Display E
+     delay();
+     delay();
+     delay();
+     P1OUT = 0b00011110; // Display F
+     delay();
+     delay();
+     delay();
+}
+}
+void delay(){
+    volatile unsigned int i;
+    for(i = 50000; i > 0; i--);
+}

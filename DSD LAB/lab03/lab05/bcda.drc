@@ -1,0 +1,11 @@
+Release 14.7 Drc P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+Sun Mar 23 16:21:00 2025
+
+drc -z BCDa.ncd BCDa.pcf
+
+WARNING:PhysDesignRules:781 - PULLUP on an active net. PULLUP of comp dp_PULLUP
+   is set but the tri state is not configured. 
+DRC detected 0 errors and 1 warnings.  Please see the previously displayed
+individual error or warning messages for more details.

@@ -1,0 +1,6 @@
+module mux2X1(I, sel, out);
+    input [1:0] I;  // 2 input lines
+    input sel;      // Selection line
+    output out;     
+    assign out = sel ? I[1] : I[0];  // MUX selects I[1] when sel=1, I[0] when sel=0
+endmodule

@@ -1,0 +1,74 @@
+#include <msp430.h>
+
+#define pos1 4
+#define pos2 6
+#define pos3 8
+#define pos4 10
+#define pos5 2
+#define pos6 18
+
+const char digit[10] = {
+    0xFC, // 0
+    0x60, // 1
+    0xDB, // 2
+    0xF3, // 3
+    0x67, // 4
+    0xB7, // 5
+    0xE4, // 6
+    0xFF, // 7
+    0xF7, // 8 (missing 9 but okay for this use)
+};
+
+int main(void)
+{
+    WDTCTL = WDTPW | WDTHOLD;   // Stop watchdog timer
+
+    P4SEL0 |= BIT1 | BIT2;
+
+    do {
+        CSCTL7 &= ~(XT1OFFG | DCOFFG);
+        SFRIFG1 &= ~OFIFG;
+    } while (SFRIFG1 & OFIFG);
+
+    CSCTL6 = (CSCTL6 & ~(XT1DRIVE_3)) | XT1DRIVE_2;
+
+    PM5CTL0 &= ~LOCKLPM5;
+
+    SYSCFG2 |= LCDPCTL;
+
+    LCDPCTL0 = 0xFFFF;
+    LCDPCTL1 = 0x07FF;
+    LCDPCTL2 = 0x00F0;
+
+    LCDCTL0 = LCDSSEL_0 | LCDDIV_7;  // ACLK, divider = 8
+
+    LCDVCTL = LCDCPEN | LCDREFEN | VLCD_6;
+
+    LCDMEMCTL |= LCDCLRM;
+
+    LCDCSSEL0 = 0x000F;
+    LCDCSSEL1 = 0x0000;
+    LCDCSSEL2 = 0x0000;
+
+    LCDM0 = 0x21;
+    LCDM1 = 0x84;
+
+    // Display "123456"
+    LCDMEM[pos1] = digit[1];
+    LCDMEM[pos2] = digit[2];
+    LCDMEM[pos3] = digit[3];
+    LCDMEM[pos4] = digit[4];
+    LCDMEM[pos5] = digit[5];
+    LCDMEM[pos6] = digit[6];
+
+    LCDCTL0 |= LCD4MUX | LCDON;
+
+    PMMCTL0_H = PMMPW_H;
+    PMMCTL0_L |= PMMREGOFF;
+
+    __bis_SR_register(LPM3_bits | GIE);
+
+    __no_operation();
+
+    return 0;
+}

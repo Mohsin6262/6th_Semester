@@ -1,0 +1,50 @@
+/*
+ * Custom Cover Page Styles
+ * Based on Bootstrap’s Cover example
+ */
+
+/* Set background color similar to Sign-In, Blog, and Checkout pages */
+body {
+    background-color: #f8f9fa; /* Light Gray (Bootstrap Default) */
+    color: black; /* Dark Text */
+  }
+  
+  /* Override Bootstrap dark theme */
+  .text-bg-dark {
+    background-color: #f8f9fa !important;
+    color: #212529 !important;
+  }
+.a{
+    color:black;
+}  
+
+/* Center container constraints */
+.cover-container {
+  max-width: 42em;
+}
+
+/* Navbar links */
+.nav-masthead .nav-link {
+  color: rgba(255, 255, 255, 0.5);
+  border-bottom: 0.25rem solid transparent;
+  margin-left: 1rem;
+  flex: 1;
+}
+
+.nav-masthead .nav-link:hover,
+.nav-masthead .nav-link:focus {
+  border-bottom-color: rgba(255, 255, 255, 0.25);
+}
+
+.nav-masthead .active {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+/* Custom button styling */
+.btn-light,
+.btn-light:hover,
+.btn-light:focus {
+  color: #333;
+  text-shadow: none; /* Prevent white text shadow on the button */
+}

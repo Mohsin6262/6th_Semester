@@ -1,0 +1,16 @@
+xst -intstyle ise -ifn "D:/Semester Data/6th semester/DSD LAB/lab03/lab03/decoder3x8.xst" -ofn "D:/Semester Data/6th semester/DSD LAB/lab03/lab03/decoder3x8.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx9-csg324-2 "decoder3x8.ngc" decoder3x8.ngd  
+map -intstyle ise -p xc6slx9-csg324-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o decoder3x8_map.ncd decoder3x8.ngd decoder3x8.pcf 
+par -w -intstyle ise -ol high -mt off decoder3x8_map.ncd decoder3x8.ncd decoder3x8.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml decoder3x8.twx decoder3x8.ncd -o decoder3x8.twr decoder3x8.pcf 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx9-csg324-2 "decoder3x8.ngc" decoder3x8.ngd  
+map -intstyle ise -p xc6slx9-csg324-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o decoder3x8_map.ncd decoder3x8.ngd decoder3x8.pcf 
+par -w -intstyle ise -ol high -mt off decoder3x8_map.ncd decoder3x8.ncd decoder3x8.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml decoder3x8.twx decoder3x8.ncd -o decoder3x8.twr decoder3x8.pcf 
+bitgen -intstyle ise -f decoder3x8.ut decoder3x8.ncd 
+xst -intstyle ise -ifn "D:/Semester Data/6th semester/DSD LAB/lab03/lab03/decoder3x8.xst" -ofn "D:/Semester Data/6th semester/DSD LAB/lab03/lab03/decoder3x8.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx9-csg324-2 "decoder3x8.ngc" decoder3x8.ngd  
+map -intstyle ise -p xc6slx9-csg324-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o decoder3x8_map.ncd decoder3x8.ngd decoder3x8.pcf 
+par -w -intstyle ise -ol high -mt off decoder3x8_map.ncd decoder3x8.ncd decoder3x8.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml decoder3x8.twx decoder3x8.ncd -o decoder3x8.twr decoder3x8.pcf 
+bitgen -intstyle ise -f decoder3x8.ut decoder3x8.ncd 

@@ -1,0 +1,41 @@
+#include <msp430fr4133.h>
+#include <stdint.h>
+
+uint16_t last_time = 0;   // Last captured time
+uint16_t cap_diff, new_time = 0;
+
+int main(void) {
+    WDTCTL = WDTPW | WDTHOLD;   // Stop watchdog timer
+
+    // Configure LED on P1.0
+    P1DIR |= BIT0;              // Set P1.0 as output (LED)
+    P1OUT &= ~BIT0;             // Ensure LED starts OFF
+
+    // Configure P1.6 for TA0.2 Capture Mode
+    P1DIR &= ~BIT6;             // Set P1.6 as input
+    P1SEL0 |= BIT6;             // Select Timer_A capture functionality for P1.6
+
+    // Disable high-impedance mode
+    PM5CTL0 &= ~LOCKLPM5;
+
+    // Configure Timer_A Capture Mode on TA0.2
+    TA0CCTL2 = CM_1 | CCIS_0 | SCS | CAP | CCIE; // Capture rising edge, enable interrupt
+    TA0CTL = TASSEL_2 | MC_2 | TACLR;            // SMCLK, Continuous mode, Clear timer
+
+    __bis_SR_register(LPM4_bits | GIE);         // Enter low-power mode with interrupts
+    return 0;
+}
+
+// Timer_A Capture ISR
+#pragma vector = TIMER0_A1_VECTOR
+__interrupt void TIMER0_A1_ISR(void) {
+    if (TA0IV == TA0IV_TACCR2) {     // Ensure it's TA0CCR2 interrupt
+        new_time = TA0CCR2;
+        cap_diff = new_time - last_time;
+        last_time = new_time;
+
+        P1OUT ^= BIT0;              // Toggle LED on each button press
+
+        __bic_SR_register_on_exit(LPM4_bits); // Exit low-power mode
+    }
+}

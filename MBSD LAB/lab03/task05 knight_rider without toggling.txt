@@ -1,0 +1,33 @@
+#include <msp430.h> 
+
+int main(void) {
+    WDTCTL = WDTPW | WDTHOLD;  // Stop watchdog timer
+    PM5CTL0 &= ~LOCKLPM5;
+
+    P8DIR |= 0xFF;             // Set all 8 pins of Port 8 as output
+    P1DIR &= ~0x04;            // Set P1.2 as input (Switch)
+    P8OUT = 0x00;              // Start with all LEDs off
+    P1REN |= 0x04;             // Enable pull-up resistor on P1.2
+    P1OUT |= 0x04;             // Pull-up resistor active
+
+    unsigned char pattern = 0x01;  // Start with the first LED
+
+    while (1) {
+        if (!(P1IN & 0x04)) {      // If switch is pressed
+            __delay_cycles(100000);  // Debounce delay
+            P8OUT = pattern;       // Turn on current LED
+            __delay_cycles(100000); // Blink delay
+            P8OUT = 0x00;          // Turn off all LEDs
+            __delay_cycles(100000); // Off delay
+            pattern <<= 1;         // Shift pattern to the next LED
+            
+            if (pattern == 0x00) { // If pattern goes beyond P8.7
+                pattern = 0x01;    // Reset to the first LED
+            }
+        } else {
+            P8OUT = 0x00;          // Turn off all LEDs when switch is not pressed
+        }
+    }
+
+    return 0;
+}

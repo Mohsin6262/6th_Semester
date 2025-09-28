@@ -1,0 +1,6 @@
+create view empDep as
+select employee.emp_name, department.name
+from employee, department
+where employee.departmentID = department.departmentID;
+
+

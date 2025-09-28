@@ -1,0 +1,84 @@
+#include <msp430.h>
+
+volatile unsigned int freq_x = 2000;  // x = 2 kHz
+volatile unsigned int freq_y = 1000;  // y = 1 kHz
+
+// Update PWM for x (P1.2 using TA0.1)
+void setPWM_X(unsigned int freq, float duty) {
+    unsigned int period = 1000000 / freq;  // SMCLK = 1 MHz
+    TA0CCR0 = period - 1;
+    TA0CCR1 = (unsigned int)(period * duty);
+}
+
+// Update PWM for y (P1.3 using TA1.1)
+void setPWM_Y(unsigned int freq, float duty) {
+    unsigned int period = 1000000 / freq;
+    TA1CCR0 = period - 1;
+    TA1CCR1 = (unsigned int)(period * duty);
+}
+
+// Update LED if x < y
+void updateLED(void) {
+    if (freq_x < freq_y)
+        P2OUT |= BIT2;  // Turn ON LED
+    else
+        P2OUT &= ~BIT2; // Turn OFF LED
+}
+
+int main(void)
+{
+    WDTCTL = WDTPW | WDTHOLD;     // stop watchdog
+    PM5CTL0 &= ~LOCKLPM5;
+
+    // --- PWM OUTPUTS on P1.2 and P1.3 ---
+    P1DIR |= BIT2 | BIT3;
+    P1SEL0 |= BIT2 | BIT3;
+
+    // --- LED OUTPUT on P2.2 ---
+    P2DIR |= BIT2;
+    P2OUT &= ~BIT2;
+
+    // --- BUTTON INPUT P2.1 w/ pull-up + interrupt ---
+    P2DIR &= ~BIT1;
+    P2REN |= BIT1;
+    P2OUT |= BIT1;
+    P2IES |= BIT1;     // falling edge
+    P2IFG &= ~BIT1;
+    P2IE  |= BIT1;
+
+    // --- Timer A0 (x: P1.2) ---
+    TA0CCTL1 = OUTMOD_7;
+    TA0CTL   = TASSEL_2 | MC_1 | TACLR;  // SMCLK, Up
+
+    // --- Timer A1 (y: P1.3) ---
+    TA1CCTL1 = OUTMOD_7;
+    TA1CTL   = TASSEL_2 | MC_1 | TACLR;
+
+    // Initial PWM setup
+    setPWM_X(freq_x, 0.75);
+    setPWM_Y(freq_y, 0.25);
+    updateLED();
+
+    __bis_SR_register(GIE | LPM0_bits);  // Enable interrupts, go LPM0
+    while (1);                           // stay in LPM0
+}
+
+// P2.1 button interrupt with simple debounce
+#pragma vector = PORT2_VECTOR
+__interrupt void Port_2_ISR(void)
+{
+    P2IE   &= ~BIT1;     // disable button IRQ
+    P2IFG &= ~BIT1;      // clear pending flag
+
+    __delay_cycles(10000);    // ~10 ms debounce
+
+    // Adjust frequencies:
+    if (freq_x > 200)   freq_x -= 100;
+    if (freq_y < 10000) freq_y += 100;
+
+    setPWM_X(freq_x, 0.75);
+    setPWM_Y(freq_y, 0.25);
+    updateLED();
+
+    P2IE  |= BIT1;      // re-enable button IRQ
+}

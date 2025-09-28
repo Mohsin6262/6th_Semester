@@ -1,0 +1,42 @@
+#include <msp430.h> 
+
+/*
+ * main.c
+ */
+int main(void) {
+    WDTCTL = WDTPW | WDTHOLD;   // Stop watchdog timer
+    PM5CTL0 &= ~LOCKLPM5;       // Disable high-impedance mode to enable GPIOs
+
+    // Configure P1.0 as output (LED1)
+    P1DIR |= BIT0;
+    P1OUT &= ~BIT0;
+
+    // Configure P4.0 as output (LED2)
+    P4DIR |= BIT0;
+    P4OUT &= ~BIT0;
+
+    // Configure P1.2 as input (Button)
+    P1DIR &= ~BIT2;
+    P1REN |= BIT2;              // Enable pull-up/down resistor
+    P1OUT |= BIT2;              // Set pull-up resistor
+
+    // Enable Interrupt on P1.2
+    P1IE  |= BIT2;              // Enable interrupt
+    P1IES |= BIT2;              // Falling edge trigger
+    P1IFG &= ~BIT2;             // Clear interrupt flag
+
+    __bis_SR_register(GIE);     // Enable global interrupts
+
+    while(1) {
+        __no_operation();       // Low power idle
+    }
+}
+
+// Interrupt Service Routine for P1
+#pragma vector = PORT1_VECTOR
+__interrupt void port_1(void) {
+    P1OUT ^= BIT0;              // Toggle P1.0
+    P4OUT ^= BIT0;              // Toggle P4.0
+    P1IFG &= ~BIT2;             // Clear interrupt flag
+}
+

@@ -1,0 +1,49 @@
+#include <msp430.h>
+
+volatile unsigned int direction = 1; // 1 for left, 0 for right
+volatile unsigned int running = 0;   // 1 = running, 0 = stopped
+
+void delay() {
+    __delay_cycles(50000); // Small delay for LED shifting effect
+}
+
+int main(void) {
+    WDTCTL = WDTPW | WDTHOLD;   // Stop watchdog timer
+    PM5CTL0 &= ~LOCKLPM5;       // Unlock GPIOs
+
+    // Configure P8.0 - P8.3 as output (Knight Rider LEDs)
+    P8DIR |= BIT0 | BIT1 | BIT2 | BIT3;
+    P8OUT = BIT0; // Start with P8.0 ON
+
+    // Configure P1.2 as input (Button)
+    P1DIR &= ~BIT2;
+    P1REN |= BIT2;              // Enable pull-up/down resistor
+    P1OUT |= BIT2;              // Set pull-up resistor
+
+    // Enable Interrupt on P1.2 (Button)
+    P1IE  |= BIT2;              // Enable interrupt
+    P1IES |= BIT2;              // Falling edge trigger (button press)
+    P1IFG &= ~BIT2;             // Clear interrupt flag
+
+    __bis_SR_register(GIE);     // Enable global interrupts
+
+    while (1) {
+        if (running) {
+            if (direction) {
+                P8OUT <<= 1;    // Shift left
+                if (P8OUT == BIT3) direction = 0; // Reverse direction
+            } else {
+                P8OUT >>= 1;    // Shift right
+                if (P8OUT == BIT0) direction = 1; // Reverse direction
+            }
+            delay(); // Small delay for effect
+        }
+    }
+}
+
+// Interrupt Service Routine for Button (P1.2)
+#pragma vector = PORT1_VECTOR
+__interrupt void PORT1_ISR(void) {
+    running ^= 1;    // Toggle running state
+    P1IFG &= ~BIT2;  // Clear interrupt flag
+}

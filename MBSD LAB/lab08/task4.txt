@@ -1,0 +1,52 @@
+#include <msp430.h>
+
+void blink_LED();
+
+int main(void)
+{
+    WDTCTL = WDTPW | WDTHOLD;     // Stop watchdog timer
+    PM5CTL0 &= ~LOCKLPM5;         // Unlock GPIOs
+
+    // Set P1.0 as output for LED
+    P1DIR |= BIT0;
+    P1OUT &= ~BIT0;
+
+    // Check if reset was caused by LPM wake-up
+    if (SYSRSTIV == SYSRSTIV_LPM5WU)
+    {
+        blink_LED();              // Blink LED 3 times
+        while(1);                 // Stay here after blinking
+    }
+
+    // Setup RTC for 10 seconds delay
+    RTCCTL = RTCSS__VLOCLK | RTCSR | RTCPS__1 | RTCIE; // VLO, start, enable interrupt
+    RTCMOD = 10 - 1;              // 10 seconds
+
+    // Enter LPM4.5
+    PMMCTL0_H = PMMPW_H;          // Unlock PMM
+    PMMCTL0_L |= PMMREGOFF;       // Enter LPM4.5
+    __bis_SR_register(LPM4_bits | GIE);
+
+    while (1); // Should never reach here
+}
+
+// RTC interrupt service routine
+#pragma vector=RTC_VECTOR
+__interrupt void RTC_ISR(void)
+{
+    RTCCTL &= ~RTCIE;             // Disable RTC interrupt
+    RTCCTL &= ~RTCSR;             // Stop RTC
+    // Wake-up from LPM4.5 causes device reset
+}
+
+// Blink function
+void blink_LED()
+{
+    for (int i = 0; i < 3; i++)
+    {
+        P1OUT ^= BIT0;           // Toggle LED
+        __delay_cycles(100000);  // Delay
+        P1OUT ^= BIT0;           // Toggle LED
+        __delay_cycles(100000);  // Delay
+    }
+}

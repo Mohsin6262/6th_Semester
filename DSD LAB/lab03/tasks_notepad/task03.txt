@@ -1,0 +1,8 @@
+module orgate(A, B, O);
+input A, B;
+output O;
+wire nandout1, nandout2;
+nand n1(nandout1, A);  
+nand n2(nandout2, B); 
+nand n3(O, nandout1, nandout2);
+endmodule

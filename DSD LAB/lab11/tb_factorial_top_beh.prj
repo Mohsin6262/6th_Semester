@@ -1,0 +1,4 @@
+verilog work "factorial_cal.v"
+verilog work "factorial_top.v"
+verilog work "tb_factorial_top.v"
+verilog work "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"

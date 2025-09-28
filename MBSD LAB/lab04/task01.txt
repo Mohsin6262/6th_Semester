@@ -1,0 +1,21 @@
+#include <msp430.h> 
+
+void delay(void);
+
+int main(void) {
+    WDTCTL = WDTPW | WDTHOLD;   // Stop watchdog timer
+    PM5CTL0 &= ~LOCKLPM5;       // Enable GPIOs
+
+    P1DIR |= 0xFF;   
+    P1DIR &= ~0xFF;            
+   
+    while(1) {
+        P1OUT = 0x0A;  // Corrected binary representation
+        delay();
+    }
+}
+
+void delay(void) {
+    volatile unsigned int i;
+    for (i = 50000; i > 0; i--);  // Simple loop-based delay
+}

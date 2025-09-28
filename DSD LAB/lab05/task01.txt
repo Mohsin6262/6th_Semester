@@ -1,0 +1,12 @@
+module task01(
+OUT,IN,dp,en
+);
+input [3:0] IN;
+output [6:0] OUT;
+input en;
+output dp;
+assign dp=en;
+assign OUT=(IN==4'b0000) ? 7'b1000000://display 0
+           (IN==4'b0001) ? 7'b1111001://display 1
+		      7'b0000000;
+endmodule

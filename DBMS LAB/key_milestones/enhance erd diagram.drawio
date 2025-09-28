@@ -1,0 +1,96 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/27.0.2 Chrome/134.0.6998.205 Electron/35.3.0 Safari/537.36" version="27.0.2">
+  <diagram name="Page-1" id="5Xeoc5_SS5fU9UHKsWaj">
+    <mxGraphModel dx="1042" dy="634" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="i4rpGl-OoW2NcMmqGxf5-17" value="" style="rounded=0;whiteSpace=wrap;html=1;container=0;fillColor=none;gradientColor=none;" parent="1" vertex="1">
+          <mxGeometry x="30" y="50" width="800" height="1130" as="geometry" />
+        </mxCell>
+        <mxCell id="NQDkiwmed-2fF3hBdOFH-68" value="User" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="330" y="110" width="160" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="NQDkiwmed-2fF3hBdOFH-69" value="&lt;u&gt;UserID&lt;/u&gt;&lt;br&gt;Name&lt;br&gt;Email&lt;div&gt;Password&lt;/div&gt;&lt;div&gt;UserType&lt;br&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;/div&gt;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;whiteSpace=wrap;" parent="NQDkiwmed-2fF3hBdOFH-68" vertex="1">
+          <mxGeometry y="50" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="NQDkiwmed-2fF3hBdOFH-71" value="JobSeeker" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;container=0;" parent="1" vertex="1">
+          <mxGeometry x="190" y="350" width="160" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="NQDkiwmed-2fF3hBdOFH-73" value="Employer" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="470" y="350" width="160" height="140" as="geometry">
+            <mxRectangle x="470" y="350" width="100" height="50" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="NQDkiwmed-2fF3hBdOFH-74" value="&lt;u&gt;EmployeID (PK)&lt;/u&gt;&lt;div&gt;UserID (FK)&lt;br&gt;&lt;div&gt;CompanyName&lt;/div&gt;&lt;div&gt;ComanyDescribtion&lt;/div&gt;&lt;div&gt;VerifiedStatus&lt;/div&gt;&lt;/div&gt;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;whiteSpace=wrap;" parent="NQDkiwmed-2fF3hBdOFH-73" vertex="1">
+          <mxGeometry y="50" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="NQDkiwmed-2fF3hBdOFH-75" value="Resume" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="190" y="540" width="160" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="NQDkiwmed-2fF3hBdOFH-76" value="&lt;div&gt;&lt;u&gt;ResumeID (PK)&lt;/u&gt;&lt;/div&gt;&lt;div&gt;SeekerID (FK)&amp;nbsp;&lt;/div&gt;FilePath&lt;div&gt;UploadDate&lt;/div&gt;&lt;div&gt;LastUpdated&lt;/div&gt;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;whiteSpace=wrap;" parent="NQDkiwmed-2fF3hBdOFH-75" vertex="1">
+          <mxGeometry y="50" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="NQDkiwmed-2fF3hBdOFH-77" value="Job" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="470" y="540" width="160" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="NQDkiwmed-2fF3hBdOFH-78" value="&lt;div&gt;&lt;u&gt;JobID (PK)&lt;/u&gt;&lt;/div&gt;&lt;div&gt;EmployeeID (FK)&lt;/div&gt;Title&lt;div&gt;Describtion&lt;/div&gt;&lt;div&gt;Requirements&lt;/div&gt;&lt;div&gt;Loacation&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;whiteSpace=wrap;" parent="NQDkiwmed-2fF3hBdOFH-77" vertex="1">
+          <mxGeometry y="50" width="160" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="NQDkiwmed-2fF3hBdOFH-79" value="Application" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=50;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;arcSize=4;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="290" y="730" width="160" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="NQDkiwmed-2fF3hBdOFH-80" value="&lt;div&gt;&lt;u&gt;ApplicationID (PK)&lt;/u&gt;&lt;/div&gt;&lt;div&gt;JobID (FK)&lt;/div&gt;&lt;div&gt;ResumeID (FK)&amp;nbsp;&lt;/div&gt;ApplicationDate&lt;div&gt;Status&lt;/div&gt;" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;whiteSpace=wrap;" parent="NQDkiwmed-2fF3hBdOFH-79" vertex="1">
+          <mxGeometry y="50" width="160" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="i4rpGl-OoW2NcMmqGxf5-1" value="" style="html=1;points=[[0,0,0,0,5],[0,1,0,0,-5],[1,0,0,0,5],[1,1,0,0,-5]];perimeter=orthogonalPerimeter;outlineConnect=0;targetShapes=umlLifeline;portConstraint=eastwest;newEdgeStyle={&quot;curved&quot;:0,&quot;rounded&quot;:0};" parent="1" vertex="1">
+          <mxGeometry x="405" y="250" width="10" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="i4rpGl-OoW2NcMmqGxf5-2" value="d" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#ff0000;" parent="1" vertex="1">
+          <mxGeometry x="395" y="280" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="i4rpGl-OoW2NcMmqGxf5-9" value="" style="endArrow=classic;html=1;rounded=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="i4rpGl-OoW2NcMmqGxf5-2" target="NQDkiwmed-2fF3hBdOFH-71" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="520" as="sourcePoint" />
+            <mxPoint x="450" y="470" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="i4rpGl-OoW2NcMmqGxf5-10" value="" style="endArrow=classic;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="i4rpGl-OoW2NcMmqGxf5-2" target="NQDkiwmed-2fF3hBdOFH-73" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="400" y="520" as="sourcePoint" />
+            <mxPoint x="450" y="470" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="i4rpGl-OoW2NcMmqGxf5-11" value="" style="fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="NQDkiwmed-2fF3hBdOFH-72" target="NQDkiwmed-2fF3hBdOFH-75" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="380" y="550" as="sourcePoint" />
+            <mxPoint x="480" y="450" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="i4rpGl-OoW2NcMmqGxf5-12" value="" style="fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="NQDkiwmed-2fF3hBdOFH-74" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="549.5" y="480" as="sourcePoint" />
+            <mxPoint x="550" y="540" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="i4rpGl-OoW2NcMmqGxf5-15" value="" style="fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" parent="1" source="NQDkiwmed-2fF3hBdOFH-76" target="NQDkiwmed-2fF3hBdOFH-79" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="180" y="850" as="sourcePoint" />
+            <mxPoint x="280" y="750" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="i4rpGl-OoW2NcMmqGxf5-16" value="" style="fontSize=12;html=1;endArrow=ERoneToMany;rounded=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" parent="1" source="NQDkiwmed-2fF3hBdOFH-78" target="NQDkiwmed-2fF3hBdOFH-79" edge="1">
+          <mxGeometry width="100" height="100" relative="1" as="geometry">
+            <mxPoint x="425" y="700" as="sourcePoint" />
+            <mxPoint x="525" y="770" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="i4rpGl-OoW2NcMmqGxf5-18" value="&lt;font style=&quot;font-size: 34px;&quot;&gt;&lt;b&gt;Enhance ER Diagram :&lt;/b&gt;&lt;/font&gt;&lt;div&gt;&lt;span style=&quot;font-size: 34px;&quot;&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;&lt;/span&gt;&lt;div&gt;&lt;font style=&quot;font-size: 26px;&quot;&gt;Group members:&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 26px;&quot;&gt;&lt;u&gt;&lt;i&gt;M Afnan Khan 22pwcse2154&lt;/i&gt;&lt;/u&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 26px;&quot;&gt;&lt;i&gt;&lt;u&gt;M Hassan 22pwcse2105&lt;/u&gt;&lt;/i&gt;&lt;/font&gt;&lt;/div&gt;&lt;div&gt;&lt;font style=&quot;font-size: 26px;&quot;&gt;&lt;i&gt;&lt;u&gt;Mohsin Sajjad 22pwcse2149&lt;/u&gt;&lt;/i&gt;&lt;/font&gt;&lt;/div&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;strokeColor=#000000;" parent="1" vertex="1">
+          <mxGeometry x="80" y="940" width="420" height="210" as="geometry" />
+        </mxCell>
+        <mxCell id="NQDkiwmed-2fF3hBdOFH-72" value="&lt;div&gt;&lt;u&gt;SeekerID (PK)&lt;/u&gt;&lt;div&gt;&lt;span style=&quot;background-color: light-dark(#ffffff, var(--ge-dark-color, #121212));&quot;&gt;&lt;font style=&quot;&quot; face=&quot;Helvetica&quot;&gt;UserID (FK)&lt;/font&gt;&lt;br&gt;&lt;/span&gt;&lt;div&gt;Adddress&lt;/div&gt;&lt;div&gt;DateOfBirth&lt;/div&gt;&lt;div&gt;ProfileSummary&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;" style="align=left;strokeColor=default;fillColor=none;spacingLeft=4;spacingRight=4;fontSize=12;verticalAlign=top;resizable=0;rotatable=0;part=1;html=1;whiteSpace=wrap;dashed=1;" parent="1" vertex="1">
+          <mxGeometry x="190" y="400" width="160" height="90" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

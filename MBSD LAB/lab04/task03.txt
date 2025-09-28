@@ -1,0 +1,82 @@
+//common cathode
+#include <msp430.h>
+
+void delay();
+
+int main(void){
+   WDTCTL= WDTPW | WDTHOLD;
+    PM5CTL0 &= ~LOCKLPM5;
+
+    P1DIR |=0XFF;
+    P1OUT &=~0XFF;
+
+ while(1){
+     P1OUT=0b01111011;//display0
+     delay();
+     delay();
+     delay();
+     P1OUT=0b00001010;//display1
+     delay();
+     delay();
+     delay();
+     P1OUT=0b10110011;//display2
+     delay();
+     delay();
+     delay();
+     P1OUT=0b10011011;//display3
+     delay();
+     delay();
+     delay();
+     P1OUT=0b11001010;//display4
+     delay();
+     delay();
+     delay();
+     P1OUT=0b11011001;//display5
+     delay();
+     delay();
+     delay();
+     P1OUT=0b11111001;//display6
+     delay();
+     delay();
+     delay();
+     P1OUT=0b00001011;//display7
+     delay();
+     delay();
+     delay();
+     P1OUT=0b11111011;//display8
+     delay();
+     delay();
+     delay();
+     P1OUT=0b11011011;//display9
+     delay();
+     delay();
+     delay();
+     P1OUT=0b11101011;//displayA
+     delay();
+     delay();
+     delay();
+     P1OUT=0b11111011;//displayB
+     delay();
+     delay();
+     delay();
+     P1OUT=0b1110001; //displayC
+     delay();
+     delay();
+     delay();
+     P1OUT=0b01111011;//displayD
+     delay();
+     delay();
+     delay();
+     P1OUT=0b11110001;//displayE
+     delay();
+     delay();
+     delay();
+     P1OUT=0b11100001;//displayF
+
+}
+}
+void delay(){
+
+    volatile unsigned int i;
+    for(i=50000;i>0;i--);
+}

@@ -1,0 +1,28 @@
+Command line:
+   factorial_top_isim_beh.exe
+     -simmode  gui
+     -simrunnum  0
+     -socket  59333
+
+Wed May 21 17:49:25 2025
+
+
+ Elaboration Time: 0.203125 sec
+
+ Current Memory Usage: 5155.02 Meg
+
+ Total Signals          : 26
+ Total Nets             : 29
+ Total Signal Drivers   : 8
+ Total Blocks           : 4
+ Total Primitive Blocks : 3
+ Total Processes        : 12
+ Total Traceable Variables  : 28
+ Total Scalar Nets and Variables : 143
+
+ Total Simulation Time: 0.296875 sec
+
+ Current Memory Usage: 4683.17 Meg
+
+Wed May 21 17:52:13 2025
+

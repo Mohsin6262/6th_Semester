@@ -1,0 +1,18 @@
+module andgate(A, B, O);
+input A, B;
+output O;
+assign O = A & B;
+endmodule
+
+
+module orgate(A, B, O);
+input A, B;
+output O;
+assign O = A | B;
+endmodule
+
+module xorgate(A, B, O);
+input A, B;
+output O;
+assign O = A ^ B;
+endmodule

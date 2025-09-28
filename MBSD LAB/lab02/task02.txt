@@ -1,0 +1,21 @@
+#include <msp430.h>
+
+int main(void) {
+    WDTCTL = WDTPW | WDTHOLD;    // Stop watchdog timer
+    PM5CTL0 &= ~LOCKLPM5;        // Disable high-impedance mode to enable GPIOs
+    P1DIR |= 0x81;               // Set P1.0 and P1.7 as output
+
+    for(;;) {
+        volatile unsigned int i, j;
+
+        P1OUT ^= 0x01;    // Toggle P1.0
+        i = 10000;
+        do i--;           // Delay after toggling P1.0
+        while(i != 0);
+
+        P1OUT ^= 0x80;    // Toggle P1.7
+        j = 30000;
+        do j--;           // Delay after toggling P1.7
+        while(j != 0);
+    }
+}

@@ -1,0 +1,35 @@
+#include <msp430.h>
+
+int main(void)
+{
+    WDTCTL = WDTPW | WDTHOLD; // Stop watchdog timer
+
+    // Configure GPIO
+    P1DIR |= BIT0; // Set P1.0 as output
+    P1OUT |= BIT0; // Turn on LED
+
+    PM5CTL0 &= ~LOCKLPM5; // Disable high-impedance mode
+
+    // Configure Timer_A
+    TA0CCTL0 |= CCIE; // Enable Timer A0 interrupt
+    TA0CCR0 = 50000;  // Set compare value
+    TA0CTL |= TASSEL__SMCLK | MC__UP; // Use SMCLK, Up mode
+
+    __bis_SR_register(LPM0_bits | GIE); // Enter LPM0, enable global interrupts
+    __no_operation(); // For debugging
+}
+
+volatile unsigned int counter = 0;
+
+// Timer A0 interrupt service routine
+#pragma vector = TIMER0_A0_VECTOR
+__interrupt void Timer_A(void)
+{
+    counter++;
+    if (counter >= 50) // 50 * 50ms = 2.5 seconds
+    {
+        P1OUT ^= BIT0; // Toggle LED
+        counter = 0;   // Reset counter
+    }
+    TA0CCR0 += 50000; // Add offset for next interrupt
+}

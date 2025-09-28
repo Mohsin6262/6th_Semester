@@ -1,0 +1,315 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.19 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.19 secs
+ 
+--> Reading design: tb_factorial_top.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "tb_factorial_top.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "tb_factorial_top"
+Output Format                      : NGC
+Target Device                      : xc6slx9-2-csg324
+
+---- Source Options
+Top Module Name                    : tb_factorial_top
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "D:\Semester Data\6th semester\DSD LAB\lab11\factorial_cal.v" into library work
+Parsing module <Clock_Divider>.
+Parsing module <FSM>.
+Parsing module <factorial_calculation>.
+Parsing module <factorial_top>.
+Analyzing Verilog file "D:\Semester Data\6th semester\DSD LAB\lab11\tb_factorial_top.v" into library work
+Parsing module <tb_factorial_top>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <tb_factorial_top>.
+"D:\Semester Data\6th semester\DSD LAB\lab11\tb_factorial_top.v" Line 47. $display Final Result at Time= $time  is: 0
+WARNING:HDLCompiler:872 - "D:\Semester Data\6th semester\DSD LAB\lab11\tb_factorial_top.v" Line 24: Using initial value of reset since it is never assigned
+WARNING:HDLCompiler:817 - "D:\Semester Data\6th semester\DSD LAB\lab11\tb_factorial_top.v" Line 52: System task monitor ignored for synthesis
+
+Elaborating module <factorial_top>.
+
+Elaborating module <FSM>.
+
+Elaborating module <factorial_calculation>.
+WARNING:HDLCompiler:413 - "D:\Semester Data\6th semester\DSD LAB\lab11\factorial_cal.v" Line 86: Result of 32-bit expression is truncated to fit in 4-bit target.
+WARNING:HDLCompiler:1127 - "D:\Semester Data\6th semester\DSD LAB\lab11\tb_factorial_top.v" Line 17: Assignment to result ignored, since the identifier is never used
+WARNING:Xst:2972 - "D:\Semester Data\6th semester\DSD LAB\lab11\tb_factorial_top.v" line 11. All outputs of instance <dut> of block <factorial_top> are unconnected in block <tb_factorial_top>. Underlying logic will be removed.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <tb_factorial_top>.
+    Related source file is "D:\Semester Data\6th semester\DSD LAB\lab11\tb_factorial_top.v".
+INFO:Xst:3210 - "D:\Semester Data\6th semester\DSD LAB\lab11\tb_factorial_top.v" line 11: Output port <result> of the instance <dut> is unconnected or connected to loadless signal.
+    Summary:
+	no macro.
+Unit <tb_factorial_top> synthesized.
+
+Synthesizing Unit <FSM>.
+    Related source file is "D:\Semester Data\6th semester\DSD LAB\lab11\factorial_cal.v".
+    Found 3-bit register for signal <state>.
+    Found 1-bit register for signal <Asel>.
+    Found 1-bit register for signal <Ale>.
+    Found 1-bit register for signal <Bsel>.
+    Found 1-bit register for signal <Ble>.
+    Summary:
+	inferred   7 D-type flip-flop(s).
+Unit <FSM> synthesized.
+
+Synthesizing Unit <factorial_calculation>.
+    Related source file is "D:\Semester Data\6th semester\DSD LAB\lab11\factorial_cal.v".
+WARNING:Xst:647 - Input <A_input> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <Asel> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 1-bit register for signal <factorial<7>>.
+    Found 1-bit register for signal <factorial<6>>.
+    Found 1-bit register for signal <factorial<5>>.
+    Found 1-bit register for signal <factorial<4>>.
+    Found 1-bit register for signal <factorial<3>>.
+    Found 1-bit register for signal <factorial<2>>.
+    Found 1-bit register for signal <factorial<1>>.
+    Found 1-bit register for signal <factorial<0>>.
+    Found 1-bit register for signal <result_out<7>>.
+    Found 1-bit register for signal <result_out<6>>.
+    Found 1-bit register for signal <result_out<5>>.
+    Found 1-bit register for signal <result_out<4>>.
+    Found 1-bit register for signal <result_out<3>>.
+    Found 1-bit register for signal <result_out<2>>.
+    Found 1-bit register for signal <result_out<1>>.
+    Found 1-bit register for signal <result_out<0>>.
+    Found 1-bit register for signal <B_reg<3>>.
+    Found 1-bit register for signal <B_reg<2>>.
+    Found 1-bit register for signal <B_reg<1>>.
+    Found 1-bit register for signal <B_reg<0>>.
+    Summary:
+	inferred  20 D-type flip-flop(s).
+Unit <factorial_calculation> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <tb_factorial_top> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block tb_factorial_top, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : tb_factorial_top.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx9csg324-2 
+
+
+Slice Logic Utilization: 
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:      0
+   Number with an unused Flip Flop:       0  out of      0         
+   Number with an unused LUT:             0  out of      0         
+   Number of fully used LUT-FF pairs:     0  out of      0         
+   Number of unique control sets:         0
+
+IO Utilization: 
+ Number of IOs:                           0
+ Number of bonded IOBs:                   0  out of    200     0%  
+
+Specific Feature Utilization:
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+No clock signals found in this design
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: No path found
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: No path found
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 9.00 secs
+Total CPU time to Xst completion: 9.10 secs
+ 
+--> 
+
+Total memory usage is 4486800 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    7 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
+

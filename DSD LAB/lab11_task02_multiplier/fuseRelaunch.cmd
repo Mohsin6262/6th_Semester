@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "D:/Semester Data/6th semester/DSD LAB/lab11_task02_multiplier/tb_mult_top_isim_beh.exe" -prj "D:/Semester Data/6th semester/DSD LAB/lab11_task02_multiplier/tb_mult_top_beh.prj" "tb_mult_top" "work.glbl" 

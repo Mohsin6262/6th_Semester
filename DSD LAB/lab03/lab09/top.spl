@@ -1,0 +1,10 @@
+[Inputs]
+btn
+RST
+clk
+[Outputs]
+led
+[BiDir]
+[ATTRIBUTES]
+VeriModel top
+

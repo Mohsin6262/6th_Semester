@@ -1,0 +1,2 @@
+verilog work "factorial_cal.v"
+verilog work "tb_factorial_top.v"

@@ -1,0 +1,23 @@
+#include <msp430.h>
+
+/*
+ * main.c
+ */
+int main(void) {
+    WDTCTL = WDTPW | WDTHOLD;    // Stop watchdog timer
+    PM5CTL0 &= ~LOCKLPM5;        // Disable high-impedance mode to enable GPIOs
+    P1DIR |= 0xFF;               // Set all P1 pins as output
+
+    unsigned char pattern = 0x01;  // Start from P1.0
+
+    while(1) {
+        P1OUT = pattern;          // Output the pattern
+        __delay_cycles(100000);   // Delay for visibility
+
+        pattern <<= 1;            // Shift left
+
+        if(pattern == 0x00) {     // If pattern goes beyond P1.7, reset
+            pattern = 0x01;
+        }
+    }
+}

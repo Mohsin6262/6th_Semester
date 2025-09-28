@@ -1,0 +1,68 @@
+#include <msp430fr4133.h>
+#include <stdint.h>
+
+uint16_t last_time = 0;
+uint16_t cap_diff, new_time = 0;
+uint8_t event_count = 0;
+
+// Function to display number on 7-segment using P1.0 - P1.6
+void display_number(uint8_t num) {
+    switch(num) {
+        case 0: P1OUT = 0b01111011; break;  // display 0
+        case 1: P1OUT = 0b00001010; break;  // display 1
+        case 2: P1OUT = 0b10110011; break;  // display 2
+        case 3: P1OUT = 0b10011011; break;  // display 3
+        case 4: P1OUT = 0b11001010; break;  // display 4
+        case 5: P1OUT = 0b11011001; break;  // display 5
+        case 6: P1OUT = 0b11111001; break;  // display 6
+        case 7: P1OUT = 0b00001011; break;  // display 7
+        case 8: P1OUT = 0b11111011; break;  // display 8
+        case 9: P1OUT = 0b11011011; break;  // display 9
+        default: P1OUT &= 0x80; break;      // turn off segments (preserve BIT7 if needed)
+    }
+}
+
+int main(void) {
+    WDTCTL = WDTPW | WDTHOLD;   // Stop watchdog timer
+
+    // P1.0 - P1.6 for 7-segment output
+    P1DIR |= 0x7F;              // Set P1.0 - P1.6 as output
+    P1OUT &= ~0x7F;             // Clear output (all segments OFF)
+
+    // LED on P1.7 (optional for debugging toggle)
+    P1DIR |= BIT7;
+    P1OUT &= ~BIT7;
+
+    // Set P1.6 as input for Timer Capture
+    P2DIR &= ~BIT6;
+    P2SEL0 |= BIT6;
+
+    // Enable GPIOs
+    PM5CTL0 &= ~LOCKLPM5;
+
+    // Timer Capture Configuration
+    TA0CCTL2 = CM_3 | CCIS_0 | SCS | CAP | CCIE;  // Capture on both edges, enable interrupt
+    TA0CTL = TASSEL_2 | MC_2 | TACLR;             // SMCLK, Continuous mode, clear timer
+
+    __bis_SR_register(LPM4_bits | GIE);           // Low-power mode with global interrupt enable
+    return 0;
+}
+
+// Timer_A Capture ISR
+#pragma vector = TIMER0_A1_VECTOR
+__interrupt void TIMER0_A1_ISR(void) {
+    if (TA0IV == TA0IV_TACCR2) {
+        new_time = TA0CCR2;
+        cap_diff = new_time - last_time;
+        last_time = new_time;
+
+        if (event_count < 9) {
+            event_count++;
+            display_number(event_count);
+        }
+
+        P1OUT ^= BIT7;  // Toggle LED on P1.7 to show event
+
+        __bic_SR_register_on_exit(LPM4_bits); // Wake from low-power mode
+    }
+}

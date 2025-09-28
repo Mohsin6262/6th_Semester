@@ -1,0 +1,103 @@
+// Clock Divider Module - 1Hz clock from 100MHz
+module Clock_Divider (
+    input clock_in,
+    output reg clock_out = 0
+);
+    reg [29:0] counter = 30'd0;
+    parameter DIVISOR = 30'd100000000; // 1 second at 100 MHz
+
+    always @(posedge clock_in) begin
+        if (counter == DIVISOR - 1) begin
+            counter <= 0;
+            clock_out <= ~clock_out;
+        end else begin
+            counter <= counter + 1;
+        end
+    end
+endmodule
+
+// Traffic Light Controller Based on FSM
+module Traffic_Controller (
+    input clk,
+    input reset,
+    input V,
+    output reg [2:0] Hout,
+    output reg [2:0] Fout
+);
+    // State encoding
+    parameter HG_FR = 2'b00,  // Highway Green, Farm Red
+              HR_FY = 2'b01,  // Highway Red, Farm Yellow
+              HR_FG = 2'b10,  // Highway Red, Farm Green
+              HY_FR = 2'b11;  // Highway Yellow, Farm Red
+
+    reg [1:0] state = HG_FR;
+    reg [3:0] counter = 0;  // 4-bit counter is enough for 10 sec
+
+    always @(posedge clk or posedge reset) begin
+        if (reset) begin
+            state <= HG_FR;
+            counter <= 0;
+        end else begin
+            case (state)
+                HG_FR: begin
+                    Hout <= 3'b001; // Green
+                    Fout <= 3'b100; // Red
+                    if (V) begin
+                        state <= HR_FY;
+                        counter <= 0;
+                    end
+                end
+
+                HR_FY: begin
+                    Hout <= 3'b100; // Red
+                    Fout <= 3'b010; // Yellow
+                    if (counter < 3)
+                        counter <= counter + 1;
+                    else begin
+                        state <= HR_FG;
+                        counter <= 0;
+                    end
+                end
+
+                HR_FG: begin
+                    Hout <= 3'b100; // Red
+                    Fout <= 3'b001; // Green
+                    if (counter < 10)
+                        counter <= counter + 1;
+                    else begin
+                        state <= HY_FR;
+                        counter <= 0;
+                    end
+                end
+
+                HY_FR: begin
+                    Hout <= 3'b010; // Yellow
+                    Fout <= 3'b100; // Red
+                    if (counter < 3)
+                        counter <= counter + 1;
+                    else begin
+                        state <= HG_FR;
+                        counter <= 0;
+                    end
+                end
+            endcase
+        end
+    end
+endmodule
+
+// Top-Level Module
+module TopModule (
+    input clk,
+    input reset,
+    input V,
+    output [2:0] Hout,
+    output [2:0] Fout
+);
+    wire slow_clk;
+
+    // Instantiate clock divider
+    Clock_Divider divider(clk, slow_clk);
+
+    // Instantiate FSM controller
+    Traffic_Controller controller(slow_clk, reset, V, Hout, Fout);
+endmodule

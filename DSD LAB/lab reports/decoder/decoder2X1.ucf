@@ -1,0 +1,9 @@
+Output Pins (Connected to LEDs)
+NET "O[3]" SLEW = FAST;  # LED4 for D[3]
+NET "O[2]" SLEW = FAST;  # LED3 for D[2]
+NET "O[1]" SLEW = FAST;  # LED2 for D[1]
+NET "O[0]" SLEW = FAST;  # LED1 for D[0]
+
+# Input Pins (Connected to DIP Switches)
+NET "I[6]" PULLUP;  # A input (Connected to DP6 switch)
+NET "I[5]" PULLUP;  # B input (Connected to DP5 switch)

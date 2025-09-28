@@ -1,0 +1,76 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 2
+-n 3 -fastpaths -xml decoder3x8.twx decoder3x8.ncd -o decoder3x8.twr
+decoder3x8.pcf
+
+Design file:              decoder3x8.ncd
+Physical constraint file: decoder3x8.pcf
+Device,package,speed:     xc6slx9,csg324,C,-2 (PRODUCTION 1.23 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2698 - No timing constraints found, doing default enumeration.
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Pad to Pad
+---------------+---------------+---------+
+Source Pad     |Destination Pad|  Delay  |
+---------------+---------------+---------+
+A              |D<0>           |    8.837|
+A              |D<1>           |    8.557|
+A              |D<2>           |    8.813|
+A              |D<3>           |    8.583|
+A              |D<4>           |    8.852|
+A              |D<5>           |    8.613|
+A              |D<6>           |    8.559|
+A              |D<7>           |    8.938|
+B              |D<0>           |    8.586|
+B              |D<1>           |    8.690|
+B              |D<2>           |    8.562|
+B              |D<3>           |    8.716|
+B              |D<4>           |    8.574|
+B              |D<5>           |    8.723|
+B              |D<6>           |    8.281|
+B              |D<7>           |    9.048|
+C              |D<0>           |    8.539|
+C              |D<1>           |    8.581|
+C              |D<2>           |    8.515|
+C              |D<3>           |    8.607|
+C              |D<4>           |    8.942|
+C              |D<5>           |    8.422|
+C              |D<6>           |    8.649|
+C              |D<7>           |    8.747|
+---------------+---------------+---------+
+
+
+Analysis completed Mon Mar 10 10:38:59 2025 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 4571 MB
+
+
+

@@ -1,0 +1,23 @@
+xst -intstyle ise -ifn "D:/Semester Data/6th semester/DSD LAB/lab03/lab08/topMultiplexer.xst" -ofn "D:/Semester Data/6th semester/DSD LAB/lab03/lab08/topMultiplexer.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx9-csg324-2 "topMultiplexer.ngc" topMultiplexer.ngd  
+map -intstyle ise -p xc6slx9-csg324-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o topMultiplexer_map.ncd topMultiplexer.ngd topMultiplexer.pcf 
+par -w -intstyle ise -ol high -mt off topMultiplexer_map.ncd topMultiplexer.ncd topMultiplexer.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml topMultiplexer.twx topMultiplexer.ncd -o topMultiplexer.twr topMultiplexer.pcf 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc topMultiplexer.ucf -p xc6slx9-csg324-2 "topMultiplexer.ngc" topMultiplexer.ngd  
+map -intstyle ise -p xc6slx9-csg324-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o topMultiplexer_map.ncd topMultiplexer.ngd topMultiplexer.pcf 
+par -w -intstyle ise -ol high -mt off topMultiplexer_map.ncd topMultiplexer.ncd topMultiplexer.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml topMultiplexer.twx topMultiplexer.ncd -o topMultiplexer.twr topMultiplexer.pcf -ucf topMultiplexer.ucf 
+bitgen -intstyle ise -f topMultiplexer.ut topMultiplexer.ncd 
+bitgen -intstyle ise -f topMultiplexer.ut topMultiplexer.ncd 
+xst -intstyle ise -ifn "D:/Semester Data/6th semester/DSD LAB/lab03/lab08/topMultiplexer.xst" -ofn "D:/Semester Data/6th semester/DSD LAB/lab03/lab08/topMultiplexer.syr" 
+xst -intstyle ise -ifn "D:/Semester Data/6th semester/DSD LAB/lab03/lab08/topMultiplexer.xst" -ofn "D:/Semester Data/6th semester/DSD LAB/lab03/lab08/topMultiplexer.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc topMultiplexer.ucf -p xc6slx9-csg324-2 "topMultiplexer.ngc" topMultiplexer.ngd  
+map -intstyle ise -p xc6slx9-csg324-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o topMultiplexer_map.ncd topMultiplexer.ngd topMultiplexer.pcf 
+par -w -intstyle ise -ol high -mt off topMultiplexer_map.ncd topMultiplexer.ncd topMultiplexer.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml topMultiplexer.twx topMultiplexer.ncd -o topMultiplexer.twr topMultiplexer.pcf -ucf topMultiplexer.ucf 
+xst -intstyle ise -ifn "D:/Semester Data/6th semester/DSD LAB/lab03/lab08/topMultiplexer.xst" -ofn "D:/Semester Data/6th semester/DSD LAB/lab03/lab08/topMultiplexer.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc topMultiplexer.ucf -p xc6slx9-csg324-2 "topMultiplexer.ngc" topMultiplexer.ngd  
+map -intstyle ise -p xc6slx9-csg324-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o topMultiplexer_map.ncd topMultiplexer.ngd topMultiplexer.pcf 
+par -w -intstyle ise -ol high -mt off topMultiplexer_map.ncd topMultiplexer.ncd topMultiplexer.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml topMultiplexer.twx topMultiplexer.ncd -o topMultiplexer.twr topMultiplexer.pcf -ucf topMultiplexer.ucf 
+bitgen -intstyle ise -f topMultiplexer.ut topMultiplexer.ncd 

@@ -1,0 +1,5 @@
+module buffer(O, I);
+input I;
+output O;
+assign O = I;
+endmodule

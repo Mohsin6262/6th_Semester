@@ -1,0 +1,16 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Mon May 26 12:08:34 2025
+//! **************************************************************************
+
+SCHEMATIC START;
+CONFIG VCCAUX = "3.3";
+COMP "clk" LOCATE = SITE "V10" LEVEL 1;
+COMP "Fout<0>" LOCATE = SITE "N16" LEVEL 1;
+COMP "Fout<1>" LOCATE = SITE "U17" LEVEL 1;
+COMP "Fout<2>" LOCATE = SITE "U18" LEVEL 1;
+COMP "Hout<0>" LOCATE = SITE "P15" LEVEL 1;
+COMP "Hout<1>" LOCATE = SITE "P16" LEVEL 1;
+COMP "Hout<2>" LOCATE = SITE "N15" LEVEL 1;
+NET "clk_BUFGP/IBUFG" PERIOD = 10 ns HIGH 50%;
+SCHEMATIC END;
+

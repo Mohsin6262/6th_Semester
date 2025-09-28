@@ -1,0 +1,16 @@
+module mux4x1(I, sel, out);
+    input [3:0] I;   // 4 input lines
+    input [1:0] sel; // 2-bit selection line
+    output reg out;  // Output declared as reg for procedural assignment
+
+    always @(*) begin
+        if (sel == 2'b00)
+            out = I[0];
+        else if (sel == 2'b01)
+            out = I[1];
+        else if (sel == 2'b10)
+            out = I[2];
+        else
+            out = I[3];
+    end
+endmodule

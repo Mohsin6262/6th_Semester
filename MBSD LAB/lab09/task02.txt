@@ -1,0 +1,19 @@
+#include <msp430.h>
+
+int main(void)
+{
+    WDTCTL = WDTPW | WDTHOLD;
+    PM5CTL0 &= ~LOCKLPM5;
+
+    P4DIR|=BIT0;
+	P4SEL0|=BIT0;
+	
+	TA1CCR0=1660-1;
+	TA1CCTL1=OUTMOD_7;
+	TA1CCR1=996;
+	TA1CTL=TASSEL__SMCLK | MC__UP | TACLR;
+	
+	__bis_SR_register(LPM0_bits);
+	__no_operation();
+}
+

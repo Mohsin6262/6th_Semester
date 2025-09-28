@@ -1,0 +1,23 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Mon Mar 17 12:25:36 2025
+//! **************************************************************************
+
+SCHEMATIC START;
+CONFIG VCCAUX = "3.3";
+COMP "OUT<0>" LOCATE = SITE "B2" LEVEL 1;
+COMP "OUT<1>" LOCATE = SITE "A2" LEVEL 1;
+COMP "OUT<2>" LOCATE = SITE "B3" LEVEL 1;
+COMP "OUT<3>" LOCATE = SITE "A5" LEVEL 1;
+COMP "OUT<4>" LOCATE = SITE "A3" LEVEL 1;
+COMP "OUT<5>" LOCATE = SITE "B4" LEVEL 1;
+COMP "OUT<6>" LOCATE = SITE "A4" LEVEL 1;
+COMP "OUT<7>" LOCATE = SITE "C4" LEVEL 1;
+COMP "OUT<8>" LOCATE = SITE "C5" LEVEL 1;
+COMP "OUT<9>" LOCATE = SITE "D6" LEVEL 1;
+COMP "OUT<10>" LOCATE = SITE "C6" LEVEL 1;
+COMP "RST" LOCATE = SITE "F18" LEVEL 1;
+COMP "CLK" LOCATE = SITE "K18" LEVEL 1;
+PIN CLK_pin<0> = BEL "CLK" PINNAME PAD;
+PIN "CLK_pin<0>" CLOCK_DEDICATED_ROUTE = FALSE;
+SCHEMATIC END;
+

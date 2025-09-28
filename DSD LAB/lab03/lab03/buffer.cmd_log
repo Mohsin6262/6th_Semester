@@ -1,0 +1,21 @@
+xst -intstyle ise -ifn "D:/Semester Data/6th semester/DSD LAB/lab03/lab03/buffer.xst" -ofn "D:/Semester Data/6th semester/DSD LAB/lab03/lab03/buffer.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx9-csg324-2 "buffer.ngc" buffer.ngd  
+map -intstyle ise -p xc6slx9-csg324-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o buffer_map.ncd buffer.ngd buffer.pcf 
+par -w -intstyle ise -ol high -mt off buffer_map.ncd buffer.ncd buffer.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml buffer.twx buffer.ncd -o buffer.twr buffer.pcf 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc buffer.ucf -p xc6slx9-csg324-2 "buffer.ngc" buffer.ngd  
+map -intstyle ise -p xc6slx9-csg324-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o buffer_map.ncd buffer.ngd buffer.pcf 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc buffer.ucf -p xc6slx9-csg324-2 "buffer.ngc" buffer.ngd  
+map -intstyle ise -p xc6slx9-csg324-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o buffer_map.ncd buffer.ngd buffer.pcf 
+par -w -intstyle ise -ol high -mt off buffer_map.ncd buffer.ncd buffer.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml buffer.twx buffer.ncd -o buffer.twr buffer.pcf -ucf buffer.ucf 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc buffer.ucf -p xc6slx9-csg324-2 "buffer.ngc" buffer.ngd  
+map -intstyle ise -p xc6slx9-csg324-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o buffer_map.ncd buffer.ngd buffer.pcf 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc buffer.ucf -p xc6slx9-csg324-2 "buffer.ngc" buffer.ngd  
+map -intstyle ise -p xc6slx9-csg324-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o buffer_map.ncd buffer.ngd buffer.pcf 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc buffer.ucf -p xc6slx9-csg324-2 "buffer.ngc" buffer.ngd  
+map -intstyle ise -p xc6slx9-csg324-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o buffer_map.ncd buffer.ngd buffer.pcf 
+par -w -intstyle ise -ol high -mt off buffer_map.ncd buffer.ncd buffer.pcf 
+trce -intstyle ise -v 3 -s 2 -n 3 -fastpaths -xml buffer.twx buffer.ncd -o buffer.twr buffer.pcf -ucf buffer.ucf 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc buffer.ucf -p xc6slx9-csg324-2 "buffer.ngc" buffer.ngd  
+map -intstyle ise -p xc6slx9-csg324-2 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o buffer_map.ncd buffer.ngd buffer.pcf 

@@ -1,0 +1,108 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 2
+-n 3 -fastpaths -xml taskb.twx taskb.ncd -o taskb.twr taskb.pcf -ucf tasks.ucf
+
+Design file:              taskb.ncd
+Physical constraint file: taskb.pcf
+Device,package,speed:     xc6slx9,csg324,C,-2 (PRODUCTION 1.23 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2698 - No timing constraints found, doing default enumeration.
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Pad to Pad
+---------------+---------------+---------+
+Source Pad     |Destination Pad|  Delay  |
+---------------+---------------+---------+
+A<0>           |OUT<0>         |   10.846|
+A<0>           |OUT<1>         |   10.828|
+A<0>           |OUT<2>         |   10.945|
+A<0>           |OUT<3>         |   11.122|
+A<0>           |OUT<4>         |   10.852|
+A<0>           |OUT<5>         |    9.989|
+A<0>           |OUT<6>         |   10.292|
+A<1>           |OUT<0>         |   11.052|
+A<1>           |OUT<1>         |   11.034|
+A<1>           |OUT<2>         |   11.151|
+A<1>           |OUT<3>         |   11.328|
+A<1>           |OUT<4>         |   11.058|
+A<1>           |OUT<5>         |   10.195|
+A<1>           |OUT<6>         |   10.498|
+A<2>           |OUT<0>         |   10.905|
+A<2>           |OUT<1>         |   10.887|
+A<2>           |OUT<2>         |   11.004|
+A<2>           |OUT<3>         |   11.181|
+A<2>           |OUT<4>         |   10.911|
+A<2>           |OUT<5>         |   10.048|
+A<2>           |OUT<6>         |   10.351|
+A<3>           |OUT<0>         |    9.701|
+A<3>           |OUT<1>         |    9.683|
+A<3>           |OUT<2>         |    9.800|
+A<3>           |OUT<3>         |    9.977|
+A<3>           |OUT<4>         |    9.707|
+A<3>           |OUT<5>         |    8.844|
+A<3>           |OUT<6>         |    9.147|
+B<0>           |OUT<0>         |   10.704|
+B<0>           |OUT<1>         |   10.686|
+B<0>           |OUT<2>         |   10.803|
+B<0>           |OUT<3>         |   10.980|
+B<0>           |OUT<4>         |   10.710|
+B<0>           |OUT<5>         |    9.847|
+B<0>           |OUT<6>         |   10.150|
+B<1>           |OUT<0>         |   10.337|
+B<1>           |OUT<1>         |   10.319|
+B<1>           |OUT<2>         |   10.436|
+B<1>           |OUT<3>         |   10.613|
+B<1>           |OUT<4>         |   10.343|
+B<1>           |OUT<5>         |    9.480|
+B<1>           |OUT<6>         |    9.783|
+B<2>           |OUT<0>         |   10.704|
+B<2>           |OUT<1>         |   10.686|
+B<2>           |OUT<2>         |   10.803|
+B<2>           |OUT<3>         |   10.980|
+B<2>           |OUT<4>         |   10.710|
+B<2>           |OUT<5>         |    9.847|
+B<2>           |OUT<6>         |   10.150|
+B<3>           |OUT<0>         |    9.847|
+B<3>           |OUT<1>         |    9.829|
+B<3>           |OUT<2>         |    9.946|
+B<3>           |OUT<3>         |   10.123|
+B<3>           |OUT<4>         |    9.853|
+B<3>           |OUT<5>         |    8.990|
+B<3>           |OUT<6>         |    9.293|
+en             |dp             |    7.138|
+---------------+---------------+---------+
+
+
+Analysis completed Mon Mar 10 11:50:26 2025 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 4571 MB
+
+
+

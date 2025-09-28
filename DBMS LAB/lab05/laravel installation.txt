@@ -1,0 +1,22 @@
+http://localhost/php_examples/E1.php
+
+
+
+composer create-project --prefer-dist laravel/laravel testProject
+//inside testProject
+composer require laravel/breeze --dev
+npm install
+php artisan breeze:install
+blade
+yes
+PHPUnit
+php artisan serve
+
+
+change in env file
+
+php artisan migrate
+
+
+
+

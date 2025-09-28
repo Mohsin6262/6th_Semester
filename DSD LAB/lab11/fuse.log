@@ -1,0 +1,12 @@
+Running: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o D:/Semester Data/6th semester/DSD LAB/lab11/tb_factorial_top_isim_beh.exe -prj D:/Semester Data/6th semester/DSD LAB/lab11/tb_factorial_top_beh.prj work.tb_factorial_top work.glbl 
+ISim P.20131013 (signature 0x7708f090)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Analyzing Verilog file "D:/Semester Data/6th semester/DSD LAB/lab11/factorial_cal.v" into library work
+Analyzing Verilog file "D:/Semester Data/6th semester/DSD LAB/lab11/factorial_top.v" into library work
+Analyzing Verilog file "D:/Semester Data/6th semester/DSD LAB/lab11/tb_factorial_top.v" into library work
+Analyzing Verilog file "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Starting static elaboration
+ERROR:HDLCompiler:71 - "D:/Semester Data/6th semester/DSD LAB/lab11/tb_factorial_top.v" Line 53: state is not declared under prefix uut_fsm
+ERROR:Simulator:778 - Static elaboration of top level Verilog design unit(s) in library work failed

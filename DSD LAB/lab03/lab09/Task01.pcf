@@ -1,0 +1,13 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Mon May 05 13:09:01 2025
+//! **************************************************************************
+
+SCHEMATIC START;
+CONFIG VCCAUX = "3.3";
+COMP "clk" LOCATE = SITE "V10" LEVEL 1;
+COMP "led" LOCATE = SITE "T18" LEVEL 1;
+COMP "btn" LOCATE = SITE "K18" LEVEL 1;
+COMP "RST" LOCATE = SITE "F18" LEVEL 1;
+NET "clk_BUFGP/IBUFG" PERIOD = 10 ns HIGH 50%;
+SCHEMATIC END;
+
